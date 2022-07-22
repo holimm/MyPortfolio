@@ -52,35 +52,35 @@ const App = () => {
     return (
       <>
       <nav className="md:flex hidden justify-start items-center w-full h-20 fixed bg-white bg-opacity-80 backdrop-blur-md z-50">
-            <ul className="flex justify-between items-center ml-12">
-              <li className="mx-5 text-xl px-3 py-2 uppercase cursor-pointer font-semibold">&#60; HoLim /&#62;</li>
+            <ul className="flex justify-between items-center md:ml-10">
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase cursor-pointer font-semibold">&#60; HoLim /&#62;</li>
             </ul>
       </nav>
       <nav className="md:flex hidden justify-end items-center w-full h-20 fixed bg-transparent z-50">
             <ul className="flex justify-between items-center mr-12">
-              <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
-              <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
-              <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
-              <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
-              <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Project</li>
-              <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Project</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
             </ul>
       </nav>
       <nav className="md:hidden flex justify-start items-center w-full h-20 fixed bg-white bg-opacity-80 backdrop-blur z-50">
-          <ul className="flex justify-between items-center mr-12">
-            <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),true)}>Menu</li>
+          <ul className="flex justify-between items-center mr-12 ml-8">
+            <li className="mx-5 text-xl px-4 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),true)}>Menu</li>
           </ul>
       </nav>
-      <div className='w-full hidden md:hidden h-screen absolute z-50 bg-slate-300 bg-opacity-70 backdrop-blur-md' id='menutab'>
-        <ul className="flex-row justify-between items-center mr-12 mt-20">
-          <li className="mx-5 text-xl px-3 py-2 uppercase cursor-pointer font-semibold">&#60; HoLim /&#62;</li>
-          <li className="mx-5 my-2 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
-          <li className="mx-5 my-2 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
-          <li className="mx-5 my-2 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
-          <li className="mx-5 my-2 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
-          <li className="mx-5 my-2 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Project</li>
-          <li className="mx-5 my-2 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
-          <li className="mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),false)}>&larr; Go Back</li>
+      <div className='w-full hidden h-screen absolute z-50 bg-slate-300 bg-opacity-70 backdrop-blur-md' id='menutab'>
+        <ul className="flex-row justify-between items-center ml-10 mt-12">
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase cursor-pointer font-semibold">&#60; HoLim /&#62;</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Project</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),false)}>&larr; Go Back</li>
         </ul>
       </div>
       </>
