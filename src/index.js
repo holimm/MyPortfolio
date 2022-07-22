@@ -98,7 +98,7 @@ const App = () => {
     }
     return (
       <div className='container-fluid bg-slate-100' ref={refAboutme}>
-        <div className="h-fit w-5/6 mx-auto pt-10 pb-28">
+        <div className="h-fit w-5/6 mx-auto pt-10 pb-20">
             <h2 className="font-mono font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center box-decoration-clone bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500">About Me</h2>
             <div className="w-full h-fit inline-block mt-12">
               <div className='w-2/4 mx-auto md:mx-0 md:w-3/12 h-full md:float-left'>
