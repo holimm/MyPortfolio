@@ -30,13 +30,13 @@ const App = () => {
               </p>
               <div className="w-1/4 mx-auto md:w-full md:mx-0 flex justify-between md:justify-start items-center">
                 <div className="w-14 h-14 hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 cursor-pointer rounded-full">
-                  <div className="bg-cover bg-center mx-auto mt-2 w-10 h-10" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div>
+                <a href='https://www.facebook.com/tea.limho' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-12 h-12" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div></a>
                 </div>
                 <div className="w-14 h-14 ml-8 hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 cursor-pointer rounded-full">
-                  <div className="bg-cover bg-center mx-auto mt-2 w-10 h-10" style={{backgroundImage: `url(./img/icon/instagram.svg)`}}></div>
+                  <a href='https://www.instagram.com/millohh_/' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-12 h-12 rounded-full" style={{backgroundImage: `url(./img/icon/instagram.svg)`}}></div></a>
                 </div>
                 <div className="w-14 h-14 ml-8 hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 cursor-pointer rounded-full">
-                  <div className="bg-cover bg-center mx-auto mt-2 w-10 h-10" style={{backgroundImage: `url(./img/icon/github.svg)`}}></div>
+                  <a href='https://github.com/holimm' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-12 h-12" style={{backgroundImage: `url(./img/icon/github.svg)`}}></div></a>
                 </div>
               </div>
             </div>
@@ -295,13 +295,13 @@ const App = () => {
                   <p className='text-md md:text-lg text-white text-start mt-3' style={{fontFamily: 'Gantari'}}>From: Ho Chi Minh City, Viet Nam</p>
                   <div className="w-full flex justify-start items-center mt-5">
                     <div className="w-10 h-10 bg-white hover:bg-slate-200 cursor-pointer rounded-full">
-                      <div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div>
+                      <a href='https://www.facebook.com/tea.limho' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div></a>
                     </div>
                     <div className="w-10 h-10 bg-white hover:bg-slate-200 ml-8 cursor-pointer rounded-full">
-                      <div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/instagram.svg)`}}></div>
+                      <a href='https://www.instagram.com/millohh_/' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-8 h-8 rounded-full" style={{backgroundImage: `url(./img/icon/instagram.svg)`}}></div></a>
                     </div>
                     <div className="w-10 h-10 bg-white hover:bg-slate-200 ml-8 cursor-pointer rounded-full">
-                      <div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/github.svg)`}}></div>
+                      <a href='https://github.com/holimm' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/github.svg)`}}></div></a>
                     </div>
                   </div>
                 </div>
