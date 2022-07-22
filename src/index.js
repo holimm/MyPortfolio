@@ -203,14 +203,14 @@ const App = () => {
     }
     return (
       <div className='container-fluid bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500' ref={refProjects}>
-        <div className="h-fit w-5/6 mx-auto pt-10 pb-20">
+        <div className="h-fit w-5/6 mx-auto pt-10 pb-16">
             <h2 className="font-mono font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center box-decoration-clone ">Projects Made</h2>
             <div className='w-full h-fit mx-auto bg-opacity-40 mt-10 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
                 <RenderProjectTab image={'./img/work/blog.png'} name={'Blog Website'} url={'https://github.com/holimm/MyBlogProject'}/>
                 <RenderProjectTab image={'./img/work/ecommerce.png'} name={'Ecommerce Website'} url={'https://github.com/holimm/Ecommerce-Project'}/>
                 <RenderProjectTab image={'./img/work/mineinus.png'} name={'Mine In Us'} url={'#'}/>
             </div>
-            <a href='https://github.com/holimm?tab=repositories' target={'_blank'} rel="noreferrer"><button className='flex px-6 py-3 mx-auto mt-10 text-xl font-semibold bg-slate-100 rounded-lg'>See all &rarr;</button></a>
+            <a href='https://github.com/holimm?tab=repositories' target={'_blank'} rel="noreferrer"><button className='flex px-6 py-3 mx-auto mt-14 text-xl font-semibold bg-slate-100 rounded-lg'>See all &rarr;</button></a>
         </div>
       </div>
     );  
@@ -252,7 +252,7 @@ const App = () => {
     }
     return (
       <div className='container-fluid bg-slate-100' ref={refJourney}>
-        <div className="h-full w-11/12 sm:w-8/12 md:w-3/4 mx-auto pt-10 pb-16 relative">
+        <div className="h-full w-11/12 sm:w-8/12 md:w-3/4 mx-auto pt-10 pb-12 relative">
         <h2 className="font-mono font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center box-decoration-clone bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500">My Journey</h2>
             <div className='w-full h-fit relative'>
                   <div className='w-1/12 h-fit mx-auto'>
@@ -266,7 +266,7 @@ const App = () => {
                   <DialogBox position={'right'} title='Updated MineInUs website to version 2, using JQuery AJAX, PHP.' period='4/2022'/>
                   <DialogBox position={'left'} title='Started with ReactJS,NodeJS and TailwindCSS' period='7/2022'/>
             </div>
-          <button className='flex px-6 py-3 mt-28 md:mt-10 mx-auto text-white text-xl font-semibold bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 rounded-lg'>See all &rarr;</button>
+          <button className='flex px-6 py-3 mt-32 md:mt-10 mx-auto text-white text-xl font-semibold bg-gradient-to-r from-blue-500 via-sky-500 to-cyan-500 rounded-lg'>See all &rarr;</button>
         </div>
       </div>
     );  
