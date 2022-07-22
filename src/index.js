@@ -293,6 +293,17 @@ const App = () => {
                   <p className='text-3xl text-white text-start font-semibold mt-3'>Contact Info</p>
                   <p className='text-md md:text-lg text-white text-start mt-3 truncate' style={{fontFamily: 'Gantari'}}>Email: kahn12345678@gmail.com</p>
                   <p className='text-md md:text-lg text-white text-start mt-3' style={{fontFamily: 'Gantari'}}>From: Ho Chi Minh City, Viet Nam</p>
+                  <div className="w-full flex justify-start items-center mt-5">
+                    <div className="w-10 h-10 bg-white hover:bg-slate-200 cursor-pointer rounded-full">
+                      <div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div>
+                    </div>
+                    <div className="w-10 h-10 bg-white hover:bg-slate-200 ml-8 cursor-pointer rounded-full">
+                      <div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/instagram.svg)`}}></div>
+                    </div>
+                    <div className="w-10 h-10 bg-white hover:bg-slate-200 ml-8 cursor-pointer rounded-full">
+                      <div className="bg-cover bg-center mx-auto mt-1 w-8 h-8" style={{backgroundImage: `url(./img/icon/github.svg)`}}></div>
+                    </div>
+                  </div>
                 </div>
             </div>
             <hr className='my-8'></hr>
