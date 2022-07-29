@@ -30,7 +30,7 @@ const App = () => {
               </p>
               <div className="w-1/4 mx-auto md:w-full md:mx-0 flex justify-between md:justify-start items-center">
                 <div className="w-14 h-14 hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 cursor-pointer rounded-full">
-                <a href='https://www.facebook.com/tea.limho' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-12 h-12" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div></a>
+                  <a href='https://www.facebook.com/tea.limho' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-12 h-12" style={{backgroundImage: `url(./img/icon/facebook.svg)`}}></div></a>
                 </div>
                 <div className="w-14 h-14 ml-8 hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 cursor-pointer rounded-full">
                   <a href='https://www.instagram.com/millohh_/' target={'_blank'} rel='noreferrer'><div className="bg-cover bg-center mx-auto mt-1 w-12 h-12 rounded-full" style={{backgroundImage: `url(./img/icon/instagram.svg)`}}></div></a>
@@ -58,29 +58,29 @@ const App = () => {
       </nav>
       <nav className="md:flex hidden justify-end items-center w-full h-20 fixed bg-transparent z-50">
             <ul className="flex justify-between items-center mr-12">
-              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
-              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
-              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
-              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
-              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Projects</li>
-              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Projects</li>
+              <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
             </ul>
       </nav>
       <nav className="md:hidden flex justify-start items-center w-full h-20 fixed bg-white bg-opacity-80 backdrop-blur z-50">
           <ul className="flex justify-between items-center mr-12 ml-8">
-            <li className="mx-5 text-xl px-4 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),true)}>Menu</li>
+            <li className="mx-5 text-xl px-4 py-2 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),true)}>Menu</li>
           </ul>
       </nav>
       <div className='w-full hidden h-screen absolute z-50 bg-slate-300 bg-opacity-70 backdrop-blur-md' id='menutab'>
         <ul className="flex-row justify-between items-center ml-10 mt-12">
           <li className="mx-5 my-2 text-xl px-3 py-4 uppercase cursor-pointer font-semibold">&#60; HoLim /&#62;</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Projects</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
-          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),false)}>&larr; Go Back</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refHeader)}>Home</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>About</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refSkills)}>Skills</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refEducation)}>Education</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refProjects)}>Projects</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>executeScrollEvent(refAboutme)}>Contact</li>
+          <li className="mx-5 my-2 text-xl px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-blue-500 hover:via-sky-500 hover:to-cyan-500 hover:text-white transition duration-500 ease-in-out rounded-lg cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),false)}>&larr; Go Back</li>
         </ul>
       </div>
       </>
@@ -123,7 +123,7 @@ const App = () => {
   function RenderSkills(){
     function RenderSkillsTab(props){
       return(
-        <div className='bg-white hover:bg-slate-200 w-full h-36 pb-3 mx-auto rounded-xl'>
+        <div className='bg-white hover:bg-slate-300 transition duration-300 ease-in-out w-full h-36 pb-3 mx-auto rounded-xl'>
           <div className='w-full h-3/4 inline-block'>
             <img className='w-20 h-20 mt-5 mx-auto' src={props.url} alt='SkillsTab'/>
           </div>
@@ -160,7 +160,7 @@ const App = () => {
   function RenderEducation(){
     function RenderEducationSchool(props){
       return(
-        <div className='w-full h-52 mt-10 bg-white hover:bg-slate-100 shadow-lg shadow-gray-400'>
+        <div className='w-full h-52 mt-10 bg-white hover:bg-slate-200 transition duration-300 ease-in-out shadow-lg shadow-gray-400'>
           <div className='w-2/6 h-full bg-cover bg-center float-left' style={{backgroundImage: `url('${props.url}')`}}></div>
           <div className='w-4/6 h-full float-left'>
             <div className='flex-row justify-between items-center mt-12'>
@@ -206,6 +206,7 @@ const App = () => {
         <div className="h-fit w-5/6 mx-auto pt-10 pb-16">
             <h2 className="font-mono font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center box-decoration-clone ">Projects Made</h2>
             <div className='w-full h-fit mx-auto bg-opacity-40 mt-10 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+                <RenderProjectTab image={'./img/work/resume.png'} name={'Resume Generator'} url={'https://github.com/holimm/MyResume'}/>
                 <RenderProjectTab image={'./img/work/blog.png'} name={'Blog Website'} url={'https://github.com/holimm/MyBlogProject'}/>
                 <RenderProjectTab image={'./img/work/ecommerce.png'} name={'Ecommerce Website'} url={'https://github.com/holimm/Ecommerce-Project'}/>
                 <RenderProjectTab image={'./img/work/mineinus.png'} name={'Mine In Us'} url={'#'}/>
@@ -307,7 +308,7 @@ const App = () => {
                 </div>
             </div>
             <hr className='my-8'></hr>
-            <p className='text-lg text-center text-white mt-3 ml-3 font-bold' style={{fontFamily: 'Gantari'}}>Design By Nguyen Lim Thai Ho</p>
+            <p className='text-lg text-center text-white mt-3 ml-3'>&copy; 2022 My Portfolio, Designed and Deployed By Nguyễn Lim Thái Hồ</p>
         </div>
       </div>
     );  
