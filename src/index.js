@@ -45,7 +45,7 @@ const App = () => {
     }
     return(
       <>
-      <div className='h-full w-full overflow-hidden absolute bg-black opacity-10 top-0'></div>
+      <div className='h-full w-full overflow-hidden absolute bg-black opacity-20 top-0'></div>
       <div className="container-fluid z-30 relative">
         <div className="w-full h-fit">
             <Header/>
