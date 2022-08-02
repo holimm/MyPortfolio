@@ -45,7 +45,7 @@ const App = () => {
     }
     return(
       <>
-      <div className='h-full w-full overflow-hidden absolute bg-black opacity-20 top-0'></div>
+      <div className='h-full w-full overflow-hidden absolute bg-black opacity-10 top-0'></div>
       <div className="container-fluid z-30 relative">
         <div className="w-full h-fit">
             <Header/>
@@ -118,7 +118,7 @@ const App = () => {
       );
     }
     return(
-      <motion.div drag className='container-fluid mt-32 w-10/12 h-fit mx-auto relative cursor-pointer'
+      <motion.div drag className='container-fluid mt-10 lg:mt-32 w-10/12 h-fit mx-auto relative cursor-pointer'
       dragConstraints={{
         top: 0,
         left: 0,
@@ -134,7 +134,7 @@ const App = () => {
             >
           </motion.div>
         </div>
-        <motion.div className='w-full h-full bg-black bg-opacity-40 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl'
+        <motion.div className='w-full h-full bg-black bg-opacity-50 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl'
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: 1, delay: 1, ease: 'easeIn'}}
@@ -184,7 +184,7 @@ const App = () => {
             >
           </motion.div>
         </div>
-        <motion.div className='w-full h-96 lg:h-full bg-black bg-opacity-40 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl overflow-y-auto'
+        <motion.div className='w-full h-96 lg:h-full bg-black bg-opacity-50 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl overflow-y-auto'
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: 1, delay: 1, ease: 'easeIn'}}
@@ -235,7 +235,7 @@ const App = () => {
             >
           </motion.div>
         </div>
-        <motion.div className='bg-black bg-opacity-40 backdrop-blur-sm rounded-3xl relative z-40 border-l border-r' 
+        <motion.div className='bg-black bg-opacity-50 backdrop-blur-sm rounded-3xl relative z-40 border-l border-r' 
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: 1, delay: 1, ease: 'easeIn'}}
@@ -295,7 +295,7 @@ const App = () => {
             >
           </motion.div>
         </div>
-        <motion.div className='bg-black bg-opacity-40 backdrop-blur-sm rounded-3xl relative z-40 border-l border-r' 
+        <motion.div className='bg-black bg-opacity-50 backdrop-blur-sm rounded-3xl relative z-40 border-l border-r' 
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 1, delay: 1, ease: 'easeIn'}}
@@ -341,7 +341,7 @@ const App = () => {
             >
           </motion.div>
         </div>
-          <motion.div className='bg-black bg-opacity-40 backdrop-blur-sm rounded-3xl relative z-40 border-l border-r' 
+          <motion.div className='bg-black bg-opacity-50 backdrop-blur-sm rounded-3xl relative z-40 border-l border-r' 
             initial={{opacity: 0}}
             animate={{opacity: 1}}
             transition={{duration: 1, delay: 1, ease: 'easeIn'}}
