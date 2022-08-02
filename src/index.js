@@ -49,7 +49,7 @@ const App = () => {
       <div className="container-fluid z-30 relative">
         <div className="w-full h-fit">
             <Header/>
-            <div className='w-full h-fit mt-6'>   
+            <div className='w-full h-fit mt-0 md:mt-2 lg:mt-6'>   
               <TabChanger tab={tab}/>            
             </div>
         </div>
@@ -175,7 +175,7 @@ const App = () => {
       );
     }
     return (
-      <div className='container-fluid w-10/12 h-fit mx-auto relative'>  
+      <div className='container-fluid w-10/12 h-fit lg:h-fit mx-auto relative'>  
         <div className='w-full h-full absolute z-30 rounded-3xl'>     
           <motion.div className='w-full rounded-3xl'
               initial={{height: '-60%', opacity: 0,border: 'solid 1px white', borderBottom: 'none', borderTop: 'none'}}
@@ -184,7 +184,7 @@ const App = () => {
             >
           </motion.div>
         </div>
-        <motion.div className='w-full h-full bg-black bg-opacity-40 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl'
+        <motion.div className='w-full h-96 lg:h-full bg-black bg-opacity-40 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl overflow-y-auto'
           initial={{opacity: 0}}
           animate={{opacity: 1}}
           transition={{duration: 1, delay: 1, ease: 'easeIn'}}
@@ -302,7 +302,7 @@ const App = () => {
           >
           <div className="h-fit w-5/6 mx-auto pt-6 pb-10">
               <h2 className="font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center" style={{fontFamily: 'Gantari'}}>Projects</h2> 
-                <div className='container w-full h-96 mx-auto bg-opacity-40 mt-6 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-x-auto'>
+                <div className='container w-full h-80 lg:h-96 mx-auto bg-opacity-40 mt-6 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-x-auto'>
                     <RenderProjectTab image={'./img/work/mysimpleradio.png'} name={'My Simple Radio'} url={'https://github.com/holimm/MySimpleRadio'} preview={'https://holimm.github.io/MySimpleRadio/'}/>
                     <RenderProjectTab image={'./img/work/resume.png'} name={'Resume Generator'} url={'https://github.com/holimm/MyResume'} preview={'https://holimm.github.io/MyResume/'}/>
                     <RenderProjectTab image={'./img/work/blog.png'} name={'Blog Website'} url={'https://github.com/holimm/MyBlog'} preview={'#'}/>
@@ -346,7 +346,7 @@ const App = () => {
             animate={{opacity: 1}}
             transition={{duration: 1, delay: 1, ease: 'easeIn'}}
           >
-          <div className="h-fit w-5/6 md:w-4/6 mx-auto pt-6 pb-16">
+          <div className="h-fit w-5/6 md:w-4/6 mx-auto pt-6 pb-10 lg:pb-16">
               <h2 className="font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center" style={{fontFamily: 'Gantari'}}>Education</h2>
               <div className="w-full h-fit inline-block">
                 <RenderEducationSchool url={'./img/saigonuni.jpg'} name={'Saigon University'} period={'2019 - Present | Pursuing'} major={'Studying Software Engineering'}/>
