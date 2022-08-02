@@ -303,7 +303,7 @@ const App = () => {
           <div className="h-fit w-5/6 mx-auto pt-6 pb-10">
               <h2 className="font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center" style={{fontFamily: 'Gantari'}}>Projects</h2> 
                 <div className='container w-full h-96 mx-auto bg-opacity-40 mt-6 rounded-md grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 overflow-x-auto'>
-                    <RenderProjectTab image={'./img/work/MySimpleRadio.png'} name={'My Simple Radio'} url={'https://github.com/holimm/MySimpleRadio'} preview={'https://holimm.github.io/MySimpleRadio/'}/>
+                    <RenderProjectTab image={'./img/work/mysimpleradio.png'} name={'My Simple Radio'} url={'https://github.com/holimm/MySimpleRadio'} preview={'https://holimm.github.io/MySimpleRadio/'}/>
                     <RenderProjectTab image={'./img/work/resume.png'} name={'Resume Generator'} url={'https://github.com/holimm/MyResume'} preview={'https://holimm.github.io/MyResume/'}/>
                     <RenderProjectTab image={'./img/work/blog.png'} name={'Blog Website'} url={'https://github.com/holimm/MyBlog'} preview={'#'}/>
                     <RenderProjectTab image={'./img/work/ecommerce.png'} name={'Ecommerce Website'} url={'https://github.com/holimm/Ecommerce-Project'} preview={'#'}/>
