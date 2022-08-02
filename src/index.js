@@ -118,7 +118,7 @@ const App = () => {
       );
     }
     return(
-      <motion.div drag className='container-fluid mt-40 w-10/12 h-fit mx-auto relative cursor-pointer'
+      <motion.div drag className='container-fluid mt-32 w-10/12 h-fit mx-auto relative cursor-pointer'
       dragConstraints={{
         top: 0,
         left: 0,
