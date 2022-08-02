@@ -3,7 +3,7 @@
 ## ❓Overview
 This is my simple portfolio website. It's a basic summary of my journey to becoming a web developer.
 ## Preview - [Live Site](https://holimm.github.io/MyPortfolio/)
-![Portfolio](https://user-images.githubusercontent.com/95845053/182330375-b0c73047-2edf-4b7d-acb8-4f2887273927.png)
+![Portfolio](https://user-images.githubusercontent.com/95845053/182343923-09bbf038-0270-40c7-8a38-c256a72995b9.png)
 
 ## 🔧 Tools
 <li><a href="https://reactjs.org/">ReactJS</a></li>
