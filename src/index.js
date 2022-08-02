@@ -189,7 +189,7 @@ const App = () => {
           animate={{opacity: 1}}
           transition={{duration: 1, delay: 1, ease: 'easeIn'}}
         >
-        <div className="h-fit w-5/6 mx-auto pt-6 pb-20">
+        <div className="h-fit w-5/6 mx-auto pt-7 pb-20">
             <h2 className="font-mono font-extrabold w-fit px-4 mx-auto text-4xl text-white text-center" style={{fontFamily: 'Gantari'}}>About Me</h2>
             <div className="w-full h-fit inline-block mt-10">
               <div className='w-2/4 mx-auto md:mx-0 md:w-3/12 h-full md:float-left'>
