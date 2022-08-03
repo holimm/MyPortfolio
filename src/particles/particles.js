@@ -21,17 +21,6 @@ export default function Particle() {
       loaded={particlesLoaded}
       options={{
         fpsLimit: 60,
-        interactivity: {
-          modes: {
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 200,
-              duration: 0.4,
-            },
-          },
-        },
         particles: {
           color: {
             value: "#d946ef",
@@ -40,7 +29,7 @@ export default function Particle() {
             color: "#ffffff",
             distance: 150,
             enable: true,
-            opacity: 0.5,
+            opacity: 0.4,
             width: 1,
           },
           collisions: {
@@ -53,7 +42,7 @@ export default function Particle() {
               default: "bounce",
             },
             random: false,
-            speed: 1,
+            speed: 0.6,
             straight: false,
           },
           number: {
@@ -61,10 +50,10 @@ export default function Particle() {
               enable: true,
               area: 800,
             },
-            value: 80,
+            value: 50,
           },
           opacity: {
-            value: 0.3,
+            value: 0.2,
           },
           shape: {
             type: "circle",

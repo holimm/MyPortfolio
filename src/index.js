@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import TypeAnimation from 'react-type-animation';
 import ReactPlayer from 'react-player';
@@ -8,9 +8,12 @@ import "./css/scrollbar.css";
 
 const App = () => {
   const [particle] = useState(<Particle/>); 
-  const [youtubeWallpaper] = useState(<ReactPlayer className='react-player' url={`//www.youtube.com/embed/5_Blq9W9cT8?autoplay=1&mute=0&start=1`} width={"100%"} height={"100vh"} playing={true} loop={true} muted={true}/>);
   const [tab,setTab] = useState('Home');
+  const [animateTab,setAnimateTab] = useState(-70);
+  const [homeDelay, setHomeDelay] = useState(2.3);
   const executeTabEvent = (label) => {
+    setAnimateTab(0);
+    setHomeDelay(0);
     label == ('Home') ? setTab('Home') :
     label == ('About') ? setTab('About') :
     label == ('Skills') ? setTab('Skills') :
@@ -18,28 +21,24 @@ const App = () => {
     label == ('Education') ? setTab('Education') :
     label == ('Contact') ? setTab('Contact') : setTab('')
   }
+
   function Wallpaper(){
     function TabChanger(props){
         switch(props.tab){
           case 'Home':{
             return <RenderHome/>
-            break;
           }
           case 'About':{
             return <RenderAbout/>
-            break;
           }
           case 'Skills':{
             return <RenderSkills/>
-            break;
           }
           case 'Projects':{
             return <RenderMyProject/>
-            break;
           }
           case 'Education':{
             return <RenderEducation/>
-            break;
           }
         }
     }
@@ -57,7 +56,7 @@ const App = () => {
       </>
     );   
   }
-  function Header() {
+  const Header = () => {
     function showMenuTab(document,state){
       state ? (document.style.display = 'block') && (document.style.position = 'fixed') : document.style.display = 'none';
     };
@@ -70,10 +69,11 @@ const App = () => {
       return(
         <motion.div whileHover={{scale:1.1}} whileTap={{scale:1}} className="mx-5 my-2 text-xl text-white px-3 py-4 uppercase hover:bg-gradient-to-r hover:from-violet-500 hover:via-fuchsia-500 hover:to-pink-500 rounded-lg cursor-pointer" onClick={()=>executeTabEvent(props.label)}>{props.label}</motion.div>
       );
-    }
+    }  
     return (
       <>
       <div className='container-fluid w-full h-fit mx-auto relative'>  
+        <motion.div initial={{y:animateTab}} animate={{y:0}} transition={{duration:1.8, ease: 'easeOut',delay:1}}>
         <nav className="md:flex text-white hidden justify-end items-center w-full h-20 z-40">
           <ul className="flex justify-between items-center mr-12">            
             <HeaderTab label="Home"/>
@@ -85,6 +85,7 @@ const App = () => {
             <li className="mx-0 lg:mx-5 text-xl px-3 py-2 uppercase cursor-pointer font-semibold">&#60; HoLim /&#62;</li>
           </ul>
         </nav>
+        </motion.div>
         <nav className="md:hidden flex justify-start items-center w-full h-20 bg-transparent">
             <ul className="flex justify-between items-center mr-12 ml-8">
               <motion.div whileHover={{scale:1.1}} whileTap={{scale:1}} className="mx-5 text-xl text-white px-4 py-2 uppercase hover:bg-gradient-to-r hover:from-violet-500 hover:via-fuchsia-500 hover:to-pink-500 rounded-lg cursor-pointer" onClick={()=>showMenuTab(document.getElementById('menutab'),true)}>Menu</motion.div>
@@ -105,7 +106,7 @@ const App = () => {
       </div>
       </>
     );
-  }
+  };
   function RenderHome(){
     function RenderSocialMedia(props){
       return(
@@ -130,14 +131,14 @@ const App = () => {
           <motion.div className='w-full rounded-3xl'
               initial={{height: '-60%', opacity: 0,border: 'solid 1px white', borderBottom: 'none', borderTop: 'none'}}
               animate={{height: '100%', opacity: 1,border: 'solid 1px white'}}
-              transition={{duration:1, ease:'easeInOut'}}             
+              transition={{duration:1, ease:'easeInOut', delay: homeDelay}}             
             >
           </motion.div>
         </div>
         <motion.div className='w-full h-full bg-black bg-opacity-50 backdrop-blur-sm relative z-40 border-l border-r rounded-3xl'
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 1, delay: 1, ease: 'easeIn'}}
+          transition={{duration: 1, delay: homeDelay+1, ease: 'easeIn'}}
         >
         <div className="h-fit w-5/6 mx-auto py-20">       
               <div className="h-fit w-full">
@@ -359,7 +360,7 @@ const App = () => {
   }
   return <>
     <div className='h-full w-full overflow-hidden absolute scale-custom md:scale-150 lg:scale-125 top-0'>
-        {youtubeWallpaper}
+      <ReactPlayer className='react-player' url={`//www.youtube.com/embed/lH6qlF_iegU?autoplay=1&mute=0&start=2618`} width={"100%"} height={"100vh"} playing={true} loop={true} muted={true}/>
     </div>   
     <div className='h-full w-full right-12 overflow-hidden absolute scale-150 lg:scale-125 top-0'>
         {particle}
