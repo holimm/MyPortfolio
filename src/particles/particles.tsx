@@ -1,8 +1,9 @@
+import React from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
 export default function Particle() {
-  const particlesInit = async (main) => {
+  const particlesInit = async (main: any) => {
     console.log(main);
 
     // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
@@ -11,14 +12,10 @@ export default function Particle() {
     await loadFull(main);
   };
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
-      loaded={particlesLoaded}
       options={{
         fpsLimit: 60,
         particles: {
@@ -66,4 +63,4 @@ export default function Particle() {
       }}
     />
   );
-};
+}
