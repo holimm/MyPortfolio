@@ -1,76 +1,88 @@
-import { Col, Divider, Image, List, Row, Typography } from "antd";
+import { Col, Divider, Flex, Image, List, Row, Typography } from "antd";
 import "../css/scrollbar.css";
-import { ScreenStyle } from "../variables/const";
+import { ScreenStyle, themeTextColor } from "../variables/const";
 import AvatarImage from "../assets/img/avatar.jpg";
 import Particle from "../particles/particles";
-import { useCallback } from "react";
-
-const TabClass = "h-fit w-full bg-white rounded-xl";
-
-const data = [
-  {
-    title: "Ant Design Title 1",
-  },
-  {
-    title: "Ant Design Title 2",
-  },
-  {
-    title: "Ant Design Title 3",
-  },
-  {
-    title: "Ant Design Title 4",
-  },
-];
+import "../css/star.css";
+import { useCallback, useRef } from "react";
+import Lottie from "lottie-react";
+import programmingAnimation from "../assets/json/young-programmer.json";
+import meetingAnimation from "../assets/json/meeting.json";
+import TypeAnimation from "react-type-animation";
 
 export const AboutScreen = () => {
+  const refProgrammingDesk = useRef(null);
   return (
-    <div className={`${ScreenStyle} bg-neutral-900 text-white`}>
-      <div className="h-full w-full absolute top-0 z-10">
-        <div className="h-12 w-full"></div>
-        <div className="p-20">
-          <Row gutter={20}>
-            <Col span={8}>
-              <div className={`${TabClass} px-2 py-8`}>
-                <div className="h-full w-full flex justify-center items-center ">
-                  <Image
-                    className="rounded-xl shadow-sm"
-                    width={"50%"}
-                    src={AvatarImage}
-                  />
+    <div className={`${ScreenStyle} dark`}>
+      <div className="h-fit w-full max-h-screen overflow-y-auto overflow-x-hidden">
+        <div className="h-screen w-full bg-gradient-to-tl from-sky-400 to-sky-300 dark:bg-black relative">
+          <div className="h-full w-full absolute z-10 background-star">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+          </div>
+          <Row className="h-full w-full absolute top-0 z-20 px-40" gutter={50}>
+            <Col span={12}>
+              <Flex className="h-full" justify="center" align="center" vertical>
+                <div className="h-fit w-full text-center">
+                  <h1 className="text-xl text-white">Greetings! my name is</h1>
+                  <h1 className={`text-7xl text-blue-600 font-bold mt-2`}>
+                    Erys Mozo
+                  </h1>
+                  <h1 className="text-xl text-white mt-8">
+                    <TypeAnimation
+                      sequence={[
+                        "I'm into Web development",
+                        1000,
+                        "I'm into Front-end development",
+                        1000,
+                        "I'm into Back-end development",
+                        1000,
+                        "I'm into Fullstack development",
+                        1000,
+                      ]}
+                      wrapper="span"
+                      speed={50}
+                      style={{ display: "inline-block" }}
+                      repeat={Infinity}
+                    />
+                  </h1>
                 </div>
-                <div className="h-fit w-full">
-                  <Typography.Title className="text-center mt-5" level={3}>
-                    Nguyen Lim Thai Ho
-                  </Typography.Title>
-                  <Divider />
-                  <List
-                    itemLayout="horizontal"
-                    dataSource={data}
-                    renderItem={(item, index) => (
-                      <List.Item>
-                        <List.Item.Meta
-                          avatar={"Test"}
-                          title={<a href="https://ant.design">{item.title}</a>}
-                          description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-                        />
-                      </List.Item>
-                    )}
-                  />
-                </div>
-              </div>
+              </Flex>
             </Col>
-            <Col span={16}>
-              <div className={`${TabClass} p-8`}>
-                <Typography.Title level={3}>About me</Typography.Title>
-                <Typography.Text>
-                  I'm a Software Engineering undergraduate at Saigon University.
-                  I'm pursuing a career as a front-end web developer. To
-                  understand more about ReactJS and NodeJS, I'm currently
-                  working on several projects to improve my skills, this is one
-                  of them. You can see some of my work in this portfolio. Thank
-                  you for visiting.
-                </Typography.Text>
-              </div>
+            <Col span={12}>
+              <Flex className="h-full" justify="center" align="center">
+                <Lottie animationData={programmingAnimation} />
+              </Flex>
+            </Col>
+          </Row>
+        </div>
+        <div className="h-fit w-full bg-sky-50 px-52 py-60">
+          <Row className="h-full w-full" gutter={50}>
+            <Col span={14}>
+              <Flex className="h-full w-full" justify="center" align="center">
+                <div className="h-fit w-full">
+                  <Typography.Title>
+                    <p className={`text-5xl text-${themeTextColor} font-bold`}>
+                      About
+                    </p>
+                  </Typography.Title>
+                  <Typography.Paragraph className="text-xl">
+                    Hi, I'm Erys, a front-end developer passionate about making
+                    awesome websites. I love turning designs into functional,
+                    enjoyable user experiences. <br />
+                    <br />I pay attention to details and enjoy improving website
+                    performance. Beyond coding, I stay updated on the latest web
+                    trends through online learning. Excited for new challenges
+                    and opportunities to grow!
+                  </Typography.Paragraph>
+                </div>
+              </Flex>
+            </Col>
+            <Col span={10}>
+              <Flex className="h-full" justify="center" align="start">
+                <Lottie animationData={meetingAnimation} />
+              </Flex>
             </Col>
           </Row>
         </div>

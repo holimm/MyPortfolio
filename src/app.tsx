@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
 import TypeAnimation from "react-type-animation";
 import ReactPlayer from "react-player";
 import { motion } from "framer-motion";
 import Particle from "./particles/particles.tsx";
 import "./css/scrollbar.css";
-import { Button, Col, Flex, Row, Space } from "antd";
+import { Button, Carousel, Col, Flex, Row, Space } from "antd";
 import {
   FacebookOutlined,
   SearchOutlined,
@@ -30,54 +30,67 @@ import { isEmpty, isEqual } from "lodash";
 import { ProjectScreen } from "./components/projects.tsx";
 import { EducationScreen } from "./components/education.tsx";
 
-export const App = () => {
-  const [particle] = useState(<Particle />);
-  const [screenChanging, setScreenChanging] = useState<any>();
-  const [currentScreen, setCurrentScreen] = useState<any>(<AboutScreen />);
+interface TopNavDataType {
+  label: string;
+}
 
-  const handleChangeTab = (screen: any) => {
-    if (isEmpty(screenChanging) && !isEqual(currentScreen, screen))
-      setScreenChanging(screen);
+export const App = () => {
+  const refCarousel = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [particle] = useState(<Particle />);
+  const topNavData = [
+    {
+      label: "About",
+    },
+    {
+      label: "Skills",
+    },
+    {
+      label: "Projects",
+    },
+    {
+      label: "Education",
+    },
+  ];
+
+  const handleChangeTab = (page: number) => {
+    refCarousel.current.goTo(page, false);
   };
-  const handleChangeCurrentScreen = () => {
-    setCurrentScreen(screenChanging);
-    setScreenChanging(undefined);
+
+  const onChangeTab = (currentSlide: number) => {
+    setCurrentSlide(currentSlide);
   };
+
+  // <a
+  //   class="group text-pink-500 transition-all duration-300 ease-in-out"
+  //   href="#"
+  // >
+  //   <span class="bg-left-bottom bg-gradient-to-r from-pink-500 to-pink-500 bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+  //     This text gets 'underlined' on hover
+  //   </span>
+  // </a>;
+  const renderTopNav = (item: TopNavDataType, index: number) => {
+    return (
+      <Button
+        type={`${index === currentSlide ? "link" : "text"}`}
+        onClick={() => handleChangeTab(index)}
+        block
+      >
+        {item.label}
+      </Button>
+    );
+  };
+
   const renderParticle = useCallback(() => <Particle />, []);
   return (
     <>
-      <div className="h-full w-full absolute top-0 z-10">
-        {renderParticle()}
-      </div>
-      <div className="h-screen w-screen bg-neutral-900">
+      <div className="h-screen w-screen">
         <div className="h-12 w-full fixed top-5 z-50">
           <div className="h-full w-fit flex justify-center items-center mx-auto px-5 py-2 bg-white rounded-full shadow-md">
             <div className="grid grid-cols-4 gap-10">
-              <Button
-                type="text"
-                onClick={() => handleChangeTab(<AboutScreen />)}
-                disabled={isEqual(currentScreen, <AboutScreen />)}
-              >
-                About
-              </Button>
-              <Button
-                type="text"
-                onClick={() => handleChangeTab(<SkillScreen />)}
-              >
-                Skills
-              </Button>
-              <Button
-                type="text"
-                onClick={() => handleChangeTab(<ProjectScreen />)}
-              >
-                Projects
-              </Button>
-              <Button
-                type="text"
-                onClick={() => handleChangeTab(<EducationScreen />)}
-              >
-                Education
-              </Button>
+              {topNavData.map((item, index) => (
+                <>{renderTopNav(item, index)}</>
+              ))}
             </div>
           </div>
         </div>
@@ -88,21 +101,19 @@ export const App = () => {
             <IconButton icon={<FaGithub size={26} />}></IconButton>
           </Space>
         </div>
-        <RenderTab>{currentScreen}</RenderTab>
-        {!isEmpty(screenChanging) && (
-          <RenderAnimateTab
-            handleChangeCurrentScreen={handleChangeCurrentScreen}
-          >
-            {screenChanging}
-          </RenderAnimateTab>
-        )}
-        {!isEmpty(screenChanging) && (
-          <RenderAnimateTab2
-            handleChangeCurrentScreen={handleChangeCurrentScreen}
-          >
-            {currentScreen}
-          </RenderAnimateTab2>
-        )}
+        <Carousel
+          afterChange={onChangeTab}
+          className="z-20"
+          dots={false}
+          speed={1000}
+          ref={refCarousel}
+        >
+          <AboutScreen />
+          <SkillScreen />
+          <ProjectScreen />
+          <EducationScreen />
+        </Carousel>
+        {/* <RenderTab>{currentScreen}</RenderTab> */}
       </div>
     </>
   );
