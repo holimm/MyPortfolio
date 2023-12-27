@@ -1,34 +1,14 @@
 import React, { useCallback, useRef, useState } from "react";
 import ReactDOM from "react-dom/client";
-import TypeAnimation from "react-type-animation";
-import ReactPlayer from "react-player";
-import { motion } from "framer-motion";
 import Particle from "./particles/particles.tsx";
 import "./css/scrollbar.css";
 import { Button, Carousel, Col, Flex, Row, Space } from "antd";
-import {
-  FacebookOutlined,
-  SearchOutlined,
-  ShoppingCartOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import {
-  FaFacebook,
-  FaFacebookSquare,
-  FaGithub,
-  FaInstagram,
-} from "react-icons/fa";
-import {
-  IconButton,
-  RenderAnimateTab,
-  RenderAnimateTab2,
-  RenderTab,
-} from "./components/common.tsx";
-import { SkillScreen } from "./components/skills.tsx";
-import { AboutScreen } from "./components/about.tsx";
+import { AboutScreen } from "./components/screens/about.tsx";
 import { isEmpty, isEqual } from "lodash";
-import { ProjectScreen } from "./components/projects.tsx";
-import { EducationScreen } from "./components/education.tsx";
+import { ProjectScreen } from "./components/screens/projects.tsx";
+import { ContactScreen } from "./components/screens/contact.tsx";
+import { HomeScreen } from "./components/screens/home.tsx";
+import "./css/common.css";
 
 interface TopNavDataType {
   label: string;
@@ -38,18 +18,27 @@ export const App = () => {
   const refCarousel = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [particle] = useState(<Particle />);
+
   const topNavData = [
     {
+      id: 0,
+      label: "Home",
+      screen: <HomeScreen />,
+    },
+    {
+      id: 1,
       label: "About",
+      screen: <AboutScreen />,
     },
     {
-      label: "Skills",
-    },
-    {
+      id: 2,
       label: "Projects",
+      screen: <ProjectScreen />,
     },
     {
-      label: "Education",
+      id: 3,
+      label: "Contact",
+      screen: <ContactScreen />,
     },
   ];
 
@@ -84,36 +73,27 @@ export const App = () => {
   const renderParticle = useCallback(() => <Particle />, []);
   return (
     <>
-      <div className="h-screen w-screen">
-        <div className="h-12 w-full fixed top-5 z-50">
-          <div className="h-full w-fit flex justify-center items-center mx-auto px-5 py-2 bg-white rounded-full shadow-md">
-            <div className="grid grid-cols-4 gap-10">
-              {topNavData.map((item, index) => (
-                <>{renderTopNav(item, index)}</>
-              ))}
+      <div className="h-screen w-screen bg-gradient-to-r from-blue-300 to-sky-300">
+        <div className="h-full w-full bg-white/80 backdrop-blur-xl">
+          <div className="h-12 w-full fixed top-5 z-50">
+            <div className="h-full w-fit flex justify-center items-center mx-auto px-5 py-2 bg-white rounded-full shadow-md">
+              <div className="grid grid-cols-4 gap-10">
+                {topNavData.map((item, index) => (
+                  <>{renderTopNav(item, index)}</>
+                ))}
+              </div>
             </div>
           </div>
+          <Carousel
+            afterChange={onChangeTab}
+            className="z-20"
+            dots={false}
+            speed={1000}
+            ref={refCarousel}
+          >
+            {topNavData.map((item) => item.screen)}
+          </Carousel>
         </div>
-        <div className="h-fit w-fit px-2 py-5 absolute bottom-20 right-16 z-50 bg-white rounded-full">
-          <Space direction="vertical">
-            <IconButton icon={<FaFacebook size={26} />}></IconButton>
-            <IconButton icon={<FaInstagram size={26} />}></IconButton>
-            <IconButton icon={<FaGithub size={26} />}></IconButton>
-          </Space>
-        </div>
-        <Carousel
-          afterChange={onChangeTab}
-          className="z-20"
-          dots={false}
-          speed={1000}
-          ref={refCarousel}
-        >
-          <AboutScreen />
-          <SkillScreen />
-          <ProjectScreen />
-          <EducationScreen />
-        </Carousel>
-        {/* <RenderTab>{currentScreen}</RenderTab> */}
       </div>
     </>
   );
