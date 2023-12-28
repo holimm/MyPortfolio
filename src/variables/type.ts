@@ -7,3 +7,12 @@ export interface SkillDataType {
   type: string;
   logoSrc: string;
 }
+export interface ScreenChangingAnimationType {
+  screenChanging: boolean;
+  initial: any;
+  animate: any;
+  transition: any;
+  zIndex: string;
+  color: string;
+  onAnimationComplete?: any;
+}

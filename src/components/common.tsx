@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 import { ScreenStyle, themeTextColor } from "../variables/const";
 import "../css/common.css";
 import { isEmpty } from "lodash";
+import { ScreenChangingAnimationType } from "../variables/type";
 
 interface IconButtonType {
   icon?: React.ReactNode;
@@ -112,5 +113,31 @@ export const PageLayout = ({ children }: { children: ReactNode }) => {
         <ScreenFooter />
       </div>
     </div>
+  );
+};
+
+export const ChangingScreenAnimation = ({
+  screenChanging,
+  initial,
+  animate,
+  transition,
+  zIndex,
+  color,
+  onAnimationComplete,
+}: ScreenChangingAnimationType) => {
+  return (
+    <>
+      {screenChanging && (
+        <>
+          <motion.div
+            className={`h-screen w-screen ${color} overflow-hidden absolute top-0 ${zIndex}`}
+            initial={initial}
+            animate={animate}
+            transition={transition}
+            onAnimationComplete={onAnimationComplete}
+          ></motion.div>
+        </>
+      )}
+    </>
   );
 };

@@ -1,48 +1,44 @@
-import { Col, Divider, Flex, Image, List, Row, Typography } from "antd";
+import { Button, Col, Divider, Flex, Image, List, Row, Typography } from "antd";
 import "../../css/scrollbar.css";
 import Lottie from "lottie-react";
 import programmingAnimation from "../../assets/json/young-programmer.json";
 import TypeAnimation from "react-type-animation";
-import { PageLayout, ScreenLayout } from "../common";
+import { CustomTypographyParagraph, PageLayout, ScreenLayout } from "../common";
+import { ArrowRightOutlined, CloudDownloadOutlined } from "@ant-design/icons";
 
 export const HomeScreen = () => {
   return (
     <PageLayout>
-      <Row className="h-full w-full px-40" gutter={50}>
-        <Col span={12}>
-          <Flex className="h-full" justify="center" align="center" vertical>
-            <div className="h-fit w-full text-center">
-              <h1 className="text-xl text-white">Greetings! my name is</h1>
-              <h1 className={`text-7xl text-blue-600 font-bold mt-2`}>
-                Erys Mozo
-              </h1>
-              <h1 className="text-xl text-white mt-8">
-                <TypeAnimation
-                  sequence={[
-                    "I'm into Web development",
-                    1000,
-                    "I'm into Front-end development",
-                    1000,
-                    "I'm into Back-end development",
-                    1000,
-                    "I'm into Fullstack development",
-                    1000,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  style={{ display: "inline-block" }}
-                  repeat={Infinity}
-                />
-              </h1>
-            </div>
-          </Flex>
-        </Col>
-        <Col span={12}>
-          <Flex className="h-full" justify="center" align="center">
-            <Lottie animationData={programmingAnimation} />
-          </Flex>
-        </Col>
-      </Row>
+      <Flex className="h-[95vh] w-full" justify="center" align="center">
+        <div className="h-fit w-fit">
+          <div className="h-fit w-full text-center">
+            <h1 className={`text-6xl text-blue-900 font-bold`}>
+              <TypeAnimation
+                sequence={["Welcome to my Portfolio", 1000, "", 1000]}
+                wrapper="span"
+                speed={50}
+                style={{ display: "inline-block" }}
+                repeat={Infinity}
+              />
+            </h1>
+            <CustomTypographyParagraph extraClass="mt-8">
+              More about me &nbsp;
+              <ArrowRightOutlined />
+            </CustomTypographyParagraph>
+            <Button
+              className="mt-8 bg-yellow-400"
+              icon={<CloudDownloadOutlined />}
+              type="text"
+            >
+              RESUME
+            </Button>
+          </div>
+          {/* <Lottie
+            className="h-[60%] w-[60%] mx-auto"
+            animationData={programmingAnimation}
+          /> */}
+        </div>
+      </Flex>
     </PageLayout>
   );
 };
