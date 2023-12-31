@@ -31,8 +31,20 @@ export const ScreenLayout = ({ children }: { children: ReactNode }) => {
 
 export const BlockItem = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
-      <div className="h-full w-full px-8 py-16 bg-white rounded-xl shadow-lg">
+    // <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
+    <div className="h-full w-full flex justify-center items-center p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl">
+      <div className="h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg">
+        {children}
+      </div>
+    </div>
+  );
+};
+
+export const BlockItemPDF = ({ children }: { children: ReactNode }) => {
+  return (
+    // <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
+    <div className="h-full w-full p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl">
+      <div className="h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg">
         {children}
       </div>
     </div>
@@ -41,8 +53,8 @@ export const BlockItem = ({ children }: { children: ReactNode }) => {
 
 export const BlockItemImage = ({ avatar }: { avatar: any }) => {
   return (
-    <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
-      <div className="h-full w-full bg-white rounded-xl shadow-lg">
+    <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl">
+      <div className="h-full w-full bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg">
         <div
           className="h-full w-full rounded-lg bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${avatar})` }}
@@ -60,7 +72,9 @@ export const CustomTypographyParagraph = ({
   extraClass?: string;
 }) => (
   <Typography.Paragraph
-    className={`text-lg ${!isEmpty(extraClass) && extraClass}`}
+    className={`text-lg text-black dark:text-white ${
+      !isEmpty(extraClass) && extraClass
+    }`}
   >
     {children}
   </Typography.Paragraph>
@@ -75,7 +89,7 @@ export const CustomTypographyTitle = ({
 }) => (
   <Typography.Title>
     <p
-      className={`text-3xl text-${themeTextColor} font-bold ${
+      className={`text-3xl text-black dark:text-white text-${themeTextColor} font-bold ${
         !isEmpty(extraClass) && extraClass
       }`}
     >
@@ -111,6 +125,16 @@ export const PageLayout = ({ children }: { children: ReactNode }) => {
       <div className="h-fit w-full max-h-screen overflow-y-auto overflow-x-hidden">
         <ScreenLayout>{children}</ScreenLayout>
         <ScreenFooter />
+      </div>
+    </div>
+  );
+};
+
+export const PageNoFooterLayout = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className={`${ScreenStyle}`}>
+      <div className="h-fit w-full max-h-screen overflow-y-auto overflow-x-hidden">
+        <ScreenLayout>{children}</ScreenLayout>
       </div>
     </div>
   );

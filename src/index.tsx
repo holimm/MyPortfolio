@@ -10,6 +10,7 @@ import { HomeScreen } from "./components/screens/home.tsx";
 import { AboutScreen } from "./components/screens/about.tsx";
 import { ProjectScreen } from "./components/screens/projects.tsx";
 import { ContactScreen } from "./components/screens/contact.tsx";
+import { ResumeScreen } from "./components/screens/resume.tsx";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 root.render(
@@ -21,7 +22,9 @@ root.render(
         <Route path={`${urlHost}/About`} element={<AboutScreen />} />
         <Route path={`${urlHost}/Projects`} element={<ProjectScreen />} />
         <Route path={`${urlHost}/Contact`} element={<ContactScreen />} />
+        <Route path={`${urlHost}/Resume`} element={<ResumeScreen />} />
       </Route>
     </Routes>
+    <Routes></Routes>
   </BrowserRouter>
 );

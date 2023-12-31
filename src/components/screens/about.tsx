@@ -55,9 +55,30 @@ export const AboutScreen = () => {
                     and opportunities to grow!
                   </CustomTypographyParagraph>
                   <Space className="mt-3" direction="horizontal" size="large">
-                    <IconButton icon={<FaFacebook size={40} />}></IconButton>
-                    <IconButton icon={<FaInstagram size={40} />}></IconButton>
-                    <IconButton icon={<FaGithub size={40} />}></IconButton>
+                    <IconButton
+                      icon={
+                        <FaFacebook
+                          size={40}
+                          className="fill-black dark:fill-white"
+                        />
+                      }
+                    ></IconButton>
+                    <IconButton
+                      icon={
+                        <FaInstagram
+                          size={40}
+                          className="fill-black dark:fill-white"
+                        />
+                      }
+                    ></IconButton>
+                    <IconButton
+                      icon={
+                        <FaGithub
+                          size={40}
+                          className="fill-black dark:fill-white"
+                        />
+                      }
+                    ></IconButton>
                   </Space>
                 </div>
               </Flex>
