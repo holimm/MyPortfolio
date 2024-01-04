@@ -1,7 +1,7 @@
 import { Button, Col, Divider, Flex, Image, List, Row, Typography } from "antd";
 import "../../css/scrollbar.css";
 import Lottie from "lottie-react";
-import helloPerson from "../../assets/json/hello-person.json";
+import purpleBot from "../../assets/json/purple-bot.json";
 import TypeAnimation from "react-type-animation";
 import {
   BlockItem,
@@ -14,6 +14,7 @@ import {
 import { ArrowRightOutlined, CloudDownloadOutlined } from "@ant-design/icons";
 import { useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
+import { themeTextColor } from "../../variables/const";
 
 export const HomeScreen = () => {
   const handleChangeTab = useOutletContext();
@@ -25,9 +26,18 @@ export const HomeScreen = () => {
           {/* <div className="h-fit w-[70vw] px-10 py-6 text-center bg-white/80 rounded-xl"> */}
           <BlockItem>
             <div className="h-[60vh] w-[65vw]">
-              <Row gutter={32}>
-                <Col span={12}>
-                  <Lottie className="mx-auto" animationData={helloPerson} />
+              <Row className="h-full w-full" gutter={32}>
+                <Col className="h-full" span={12}>
+                  <Flex
+                    className="h-full w-full"
+                    justify="center"
+                    align="center"
+                  >
+                    <Lottie
+                      className="mx-auto mt-10"
+                      animationData={purpleBot}
+                    />
+                  </Flex>
                 </Col>
                 <Col span={12}>
                   <div className="h-full w-full grid grid-cols-1">
@@ -39,9 +49,13 @@ export const HomeScreen = () => {
                         style={{ display: "inline-block" }}
                         repeat={Infinity}
                       /> */}
-                      <CustomTypographyTitle extraClass="w-fit">
+                      <CustomTypographyTitle
+                        extraClass={`w-fit !text-fuchsia-600`}
+                      >
                         Greeting,
-                        <p className="mt-2">Welcome to my portfolio</p>
+                        <CustomTypographyTitle extraClass="mt-2 font-extralight text-black dark:text-white">
+                          Welcome to my portfolio
+                        </CustomTypographyTitle>
                       </CustomTypographyTitle>
                       <a onClick={() => handleChangeTab("About")}>
                         <CustomTypographyParagraph extraClass="w-fit mx-auto text-center cursor-pointer hover:scale-105 transition">

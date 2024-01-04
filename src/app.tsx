@@ -11,9 +11,24 @@ import { ContactScreen } from "./components/screens/contact.tsx";
 import { HomeScreen } from "./components/screens/home.tsx";
 import "./css/common.css";
 import { Outlet, useNavigate } from "react-router-dom";
-import { ChangingScreenAnimation } from "./components/common.tsx";
+import {
+  BlockItemHeader,
+  ChangingScreenAnimation,
+} from "./components/common.tsx";
 import ReactPlayer from "react-player";
 import { FaMoon, FaSun } from "react-icons/fa";
+import {
+  darkModeColor,
+  darkModeColorSub,
+  lightModeColor,
+  lightModeColorSub,
+} from "./variables/const.ts";
+import { pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.js",
+  import.meta.url
+).toString();
 
 interface TopNavDataType {
   label: string;
@@ -75,7 +90,10 @@ export const App = () => {
   const renderTopNav = (item: TopNavDataType, index: number) => {
     return (
       <Button
-        type={`${item.label === currentSlide ? "link" : "text"}`}
+        className={`font-montserrat text-black dark:text-white ${
+          item.label === currentSlide && "!text-fuchsia-800"
+        }`}
+        type="text"
         onClick={() => handleChangeTab(item.label)}
         block
       >
@@ -85,28 +103,14 @@ export const App = () => {
   };
 
   return (
-    <>
-      {!isEmpty(pathURL) && pathURL !== null && pathURL[1] === "Resume" ? (
-        <div className="h-fit w-fit fixed top-20 left-20 z-50">
-          <div className="h-full w-fit flex justify-center items-center mx-auto px-5 py-10 bg-white rounded-xl shadow-md">
-            <div className="grid grid-cols-1 gap-10">
-              {topNavData.map((item, index) => (
-                <>{renderTopNav(item, index)}</>
-              ))}
-            </div>
-          </div>
+    <div className={`${darkMode && "dark"}`}>
+      <BlockItemHeader>
+        <div className="grid grid-cols-4 gap-10">
+          {topNavData.map((item, index) => (
+            <>{renderTopNav(item, index)}</>
+          ))}
         </div>
-      ) : (
-        <div className="h-12 w-full fixed top-5 z-50">
-          <div className="h-full w-fit flex justify-center items-center mx-auto px-5 py-2 bg-white rounded-full shadow-md">
-            <div className="grid grid-cols-4 gap-10">
-              {topNavData.map((item, index) => (
-                <>{renderTopNav(item, index)}</>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
+      </BlockItemHeader>
       <div className="h-fit w-fit bg-white p-2 fixed bottom-16 right-16 z-50 rounded-full">
         <Switch
           className="bg-neutral-400"
@@ -115,6 +119,7 @@ export const App = () => {
           onChange={handleDarkMode}
         />
       </div>
+      <div className="h-screen w-screen absolute top-0 z-30 bg-transparent dark:bg-black/50"></div>
       <div className="relative top-0 z-40">
         <ChangingScreenAnimation
           screenChanging={screenChanging}
@@ -165,15 +170,11 @@ export const App = () => {
           muted={true}
         />
       </div>
-      <div
-        className={`h-screen w-screen absolute top-0 z-30 ${
-          darkMode && "dark"
-        }`}
-      >
-        <div className="h-full w-full bg-transparent backdrop-blur-sm">
+      <div className={`h-screen w-screen absolute top-0 z-30`}>
+        <div className="h-full w-full bg-transparent backdrop-blur-sm !font-montserrat">
           <Outlet context={handleChangeTab} />
         </div>
       </div>
-    </>
+    </div>
   );
 };

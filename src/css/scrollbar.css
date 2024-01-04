@@ -1,27 +1,30 @@
 /* width */
 ::-webkit-scrollbar {
-    width: 0px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: rgba(255,255,255); 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #ef4444; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #dc2626; 
-  }
+  height: 10px;
+  width: 0px;
+}
 
-  @media (max-width: 768px) {
-    .scale-custom {
-      --tw-scale-x: 3;
-      --tw-scale-y: 3;
-      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    }
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+
+@media (max-width: 768px) {
+  .scale-custom {
+    --tw-scale-x: 3;
+    --tw-scale-y: 3;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+      rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+      scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
 }
