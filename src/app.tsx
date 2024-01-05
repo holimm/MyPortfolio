@@ -3,7 +3,18 @@ import ReactDOM from "react-dom/client";
 import { motion } from "framer-motion";
 import Particle from "./particles/particles.tsx";
 import "./css/scrollbar.css";
-import { Button, Carousel, Col, Flex, Row, Space, Switch } from "antd";
+import {
+  Button,
+  Carousel,
+  Col,
+  Dropdown,
+  DropdownProps,
+  Flex,
+  MenuProps,
+  Row,
+  Space,
+  Switch,
+} from "antd";
 import { AboutScreen } from "./components/screens/about.tsx";
 import { isEmpty, isEqual } from "lodash";
 import { ProjectScreen } from "./components/screens/projects.tsx";
@@ -13,17 +24,13 @@ import "./css/common.css";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
   BlockItemHeader,
+  BlockItemMenu,
   ChangingScreenAnimation,
 } from "./components/common.tsx";
 import ReactPlayer from "react-player";
 import { FaMoon, FaSun } from "react-icons/fa";
-import {
-  darkModeColor,
-  darkModeColorSub,
-  lightModeColor,
-  lightModeColorSub,
-} from "./variables/const.ts";
 import { pdfjs } from "react-pdf";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -42,6 +49,7 @@ export const App = () => {
   const [screenChanging, setScreenChanging] = useState(false);
   const [screenOpenUp, setScreenOpenUp] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const checkScreenChangingAnimation = screenChanging && screenOpenUp;
   const navigate = useNavigate();
   const [particle] = useState(<Particle />);
@@ -65,6 +73,40 @@ export const App = () => {
     },
   ];
 
+  const handleDarkMode = (checked: boolean) => {
+    setDarkMode(checked);
+  };
+
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: (
+        <div className="flex justify-start items-center">
+          <span className="mr-5">Dark Mode</span>
+          <Switch
+            className="bg-neutral-400"
+            checkedChildren={"Dark"}
+            unCheckedChildren={"Light"}
+            onChange={handleDarkMode}
+          />
+        </div>
+      ),
+    },
+    {
+      key: "2",
+      label: (
+        <div className="flex justify-start items-center">
+          <span className="mr-5">Languages</span>
+          <Switch
+            className="bg-neutral-400"
+            checkedChildren={"VI"}
+            unCheckedChildren={"EN"}
+          />
+        </div>
+      ),
+    },
+  ];
+
   const handleChangeTab = (label: string) => {
     if (screenOpenUp) return;
     if (label === currentSlide) return;
@@ -83,10 +125,6 @@ export const App = () => {
     }
   };
 
-  const handleDarkMode = (checked: boolean) => {
-    setDarkMode(checked);
-  };
-
   const renderTopNav = (item: TopNavDataType, index: number) => {
     return (
       <Button
@@ -101,6 +139,11 @@ export const App = () => {
       </Button>
     );
   };
+  const handleOpenChange: DropdownProps["onOpenChange"] = (nextOpen, info) => {
+    if (info.source === "trigger" || nextOpen) {
+      setOpenMenu(nextOpen);
+    }
+  };
 
   return (
     <div className={`${darkMode && "dark"}`}>
@@ -111,21 +154,28 @@ export const App = () => {
           ))}
         </div>
       </BlockItemHeader>
-      <div className="h-fit w-fit bg-white p-2 fixed bottom-16 right-16 z-50 rounded-full">
-        <Switch
-          className="bg-neutral-400"
-          checkedChildren={"Dark"}
-          unCheckedChildren={"Light"}
-          onChange={handleDarkMode}
-        />
-      </div>
+      <BlockItemMenu>
+        <Dropdown
+          menu={{ items }}
+          onOpenChange={handleOpenChange}
+          open={openMenu}
+          placement="topLeft"
+        >
+          <a className="cursor-pointer" onClick={(e) => e.preventDefault()}>
+            <GiHamburgerMenu
+              className="fill-black dark:fill-white hover:scale-[1.2] transition-all"
+              size={20}
+            />
+          </a>
+        </Dropdown>
+      </BlockItemMenu>
       <div className="h-screen w-screen absolute top-0 z-30 bg-transparent dark:bg-black/50"></div>
       <div className="relative top-0 z-40">
         <ChangingScreenAnimation
           screenChanging={screenChanging}
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           zIndex="z-20"
           color="bg-[#2d054c]"
         />
@@ -133,7 +183,7 @@ export const App = () => {
           screenChanging={screenChanging}
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
           zIndex="z-30"
           color="bg-[#1f0434]"
           onAnimationComplete={handleNavigate}
@@ -142,7 +192,7 @@ export const App = () => {
           screenChanging={screenOpenUp}
           initial={{ y: 0 }}
           animate={{ y: "100vh" }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
           zIndex="z-20"
           color="bg-[#2d054c]"
           onAnimationComplete={() => {
@@ -153,7 +203,7 @@ export const App = () => {
           screenChanging={screenOpenUp}
           initial={{ y: 0 }}
           animate={{ y: "100vh" }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           zIndex="z-30"
           color="bg-[#1f0434]"
         />

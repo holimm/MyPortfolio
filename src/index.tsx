@@ -11,6 +11,7 @@ import { AboutScreen } from "./components/screens/about.tsx";
 import { ProjectScreen } from "./components/screens/projects.tsx";
 import { ContactScreen } from "./components/screens/contact.tsx";
 import { ResumeScreen } from "./components/screens/resume.tsx";
+import "./i18n";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 root.render(

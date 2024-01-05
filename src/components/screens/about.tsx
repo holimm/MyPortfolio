@@ -56,7 +56,7 @@ export const AboutScreen = () => {
 
   return (
     <PageLayout>
-      <div className="h-full w-[55%] mt-24 pb-28 grid grid-cols-1 gap-y-5">
+      <div className="h-full w-[55%] mt-24 grid grid-cols-1 gap-y-5">
         <Row gutter={20}>
           <Col span={14} className="h-full w-full">
             <BlockItem>

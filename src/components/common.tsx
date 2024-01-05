@@ -1,20 +1,27 @@
-import { Button, Card, Flex, Image, Space, Typography } from "antd";
-import { motion } from "framer-motion";
-import { ReactNode, useState } from "react";
 import {
-  ScreenStyle,
-  darkModeColor,
-  darkModeColorSub,
-  lightModeColor,
-  lightModeColorSub,
-  themeTextColor,
-} from "../variables/const";
+  Button,
+  Card,
+  Dropdown,
+  DropdownProps,
+  Flex,
+  Image,
+  MenuProps,
+  Space,
+  Switch,
+  Typography,
+} from "antd";
+import { motion } from "framer-motion";
+import { MouseEventHandler, ReactNode, useState } from "react";
+import { ScreenStyle, themeTextColor } from "../variables/const";
 import "../css/common.css";
 import { isEmpty } from "lodash";
 import { ScreenChangingAnimationType } from "../variables/type";
 import { Document, Page } from "react-pdf";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import { MenuOutlined } from "@ant-design/icons";
+import { CiMenuBurger } from "react-icons/ci";
+import { SwitchChangeEventHandler } from "antd/es/switch";
 
 interface IconButtonType {
   icon?: React.ReactNode;
@@ -43,7 +50,7 @@ export const IconButtonFooter = ({
 }) => {
   return (
     <div
-      className={`h-fit w-fit ${lightModeColor} dark:${darkModeColor} rounded-lg`}
+      className={`h-fit w-fit bg-white/80 dark:bg-neutral-900/80 rounded-lg`}
     >
       <a href={url} target="_blank">
         <Button
@@ -63,8 +70,8 @@ export const RenderTab = ({ children }: { children: ReactNode }) => {
 
 export const ScreenLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="h-fit min-h-screen w-full">
-      <div className="h-fit min-h-screen w-full flex justify-center items-start relative z-10 top-0">
+    <div className="h-fit w-full">
+      <div className="h-fit w-full flex justify-center items-start relative z-10 top-0">
         {children}
       </div>
     </div>
@@ -75,10 +82,10 @@ export const BlockItem = ({ children }: { children: ReactNode }) => {
   return (
     // <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
     <div
-      className={`h-full w-full flex justify-center items-center p-2 text-white transition-all ${lightModeColorSub} dark:${darkModeColorSub} backdrop-blur-3xl rounded-xl`}
+      className={`h-fit w-full flex justify-center items-center p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full px-8 py-16 ${lightModeColor} dark:${darkModeColor} rounded-xl shadow-lg`}
+        className={`h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
       >
         {children}
       </div>
@@ -90,10 +97,10 @@ export const BlockItemPDF = ({ children }: { children: ReactNode }) => {
   return (
     // <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
     <div
-      className={`h-full w-full p-2 text-white transition-all ${lightModeColorSub} dark:${darkModeColorSub} backdrop-blur-3xl rounded-xl`}
+      className={`h-full w-full p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full px-8 py-16 ${lightModeColor} dark:${darkModeColor} rounded-xl shadow-lg`}
+        className={`h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
       >
         {children}
       </div>
@@ -104,10 +111,10 @@ export const BlockItemPDF = ({ children }: { children: ReactNode }) => {
 export const BlockItemImage = ({ avatar }: { avatar: any }) => {
   return (
     <div
-      className={`h-full w-full flex justify-center items-center p-2 ${lightModeColorSub} dark:${darkModeColorSub} backdrop-blur-3xl rounded-xl`}
+      className={`h-full w-full flex justify-center items-center p-2 bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full ${lightModeColor} dark:${darkModeColor} rounded-xl shadow-lg`}
+        className={`h-full w-full bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
       >
         <div
           className="h-full w-full rounded-lg bg-cover bg-center bg-no-repeat"
@@ -122,10 +129,26 @@ export const BlockItemHeader = ({ children }: { children: ReactNode }) => {
   return (
     <div className="h-14 w-full flex justify-center items-center fixed top-3 z-50">
       <div
-        className={`h-full w-fit ${lightModeColorSub} dark:${darkModeColorSub} rounded-full p-1`}
+        className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
       >
         <div
-          className={`h-full w-fit  mx-auto px-5 py-2 ${lightModeColor} dark:${darkModeColor} dark:b rounded-full shadow-md`}
+          className={`h-full w-fit mx-auto px-5 py-2 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
+        >
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const BlockItemMenu = ({ children }: { children: ReactNode }) => {
+  return (
+    <div className="h-fit w-fit flex justify-center items-center fixed bottom-16 right-16 z-50">
+      <div
+        className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
+      >
+        <div
+          className={`h-full w-fit mx-auto p-4 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
         >
           {children}
         </div>
@@ -223,7 +246,7 @@ export const SkillList = ({ skillData }: { skillData: any[] }) => {
 export const ScreenFooter = () => {
   return (
     <>
-      <div className="h-fit w-full flex justify-center">
+      <div className="h-fit w-full flex justify-center mt-14">
         <div className="h-fit w-fit">
           <Space className="mx-auto mt-3" direction="horizontal" size="large">
             <IconButtonFooter

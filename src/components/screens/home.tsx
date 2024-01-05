@@ -15,8 +15,10 @@ import { ArrowRightOutlined, CloudDownloadOutlined } from "@ant-design/icons";
 import { useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 import { themeTextColor } from "../../variables/const";
+import { useTranslation } from "react-i18next";
 
 export const HomeScreen = () => {
+  const { t, i18n } = useTranslation();
   const handleChangeTab = useOutletContext();
   // console.log(handleChangeTab);
   return (
@@ -50,15 +52,15 @@ export const HomeScreen = () => {
                         repeat={Infinity}
                       /> */}
                       <CustomTypographyTitle
-                        extraClass={`w-fit !text-fuchsia-600`}
+                        extraClass={`!text-5xl w-fit !text-fuchsia-600`}
                       >
-                        Greeting,
-                        <CustomTypographyTitle extraClass="mt-2 font-extralight text-black dark:text-white">
+                        Greeting, {t("Welcome to React")}
+                        <CustomTypographyTitle extraClass="!text-4xl mt-2 font-extralight text-black dark:text-white">
                           Welcome to my portfolio
                         </CustomTypographyTitle>
                       </CustomTypographyTitle>
                       <a onClick={() => handleChangeTab("About")}>
-                        <CustomTypographyParagraph extraClass="w-fit mx-auto text-center cursor-pointer hover:scale-105 transition">
+                        <CustomTypographyParagraph extraClass="w-fit mx-auto -mt-9 text-center cursor-pointer hover:scale-105 transition">
                           More about me &nbsp;
                           <ArrowRightOutlined />
                         </CustomTypographyParagraph>

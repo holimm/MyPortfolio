@@ -1,16 +1,8 @@
 import { SkillDataType } from "./type";
 
-export const ScreenStyle = "h-screen w-full";
+export const ScreenStyle = "h-full w-full";
 
 export const themeTextColor = "blue-500";
-
-export const darkModeColor = "bg-neutral-900/80";
-
-export const lightModeColor = "bg-white/80";
-
-export const darkModeColorSub = "bg-neutral-800/40";
-
-export const lightModeColorSub = "bg-slate-100/40";
 
 export const urlHost = "/MyPortfolio";
 
