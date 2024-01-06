@@ -46,18 +46,18 @@ import ResumeGenerator_2 from "../../assets/img/projects/ResumeGenerator/ResumeG
 import MyBlog from "../../assets/img/projects/MyBlog/MyBlog.png";
 import { isEmpty } from "lodash";
 
-const data = [
+const dataIndustrySkill = [
   {
-    title: "Ant Design Title 1",
+    row: "Worked on the company's app on the Zalo Mini App flatform to assist warehouse employees in submitting requests to address the issues they are currently facing.",
   },
   {
-    title: "Ant Design Title 2",
+    row: "Developed features like barcode/QR code scanning and attaching multiple documents, images, or multimedia files to help support staff better understand the issue and make inputting more efficient.",
   },
   {
-    title: "Ant Design Title 3",
+    row: "Helped solve bugs and errors in the front-end of the app.",
   },
   {
-    title: "Ant Design Title 4",
+    row: "Researched and developed a UIPath unattended bot to automate the process of getting incoming emails or email replies, then processing them and sending them back to the back-end to create a request node or comment on an existing request node.",
   },
 ];
 
@@ -137,19 +137,18 @@ export const ProjectScreen = () => {
                   <CustomTypographyParagraph>
                     <List
                       itemLayout="horizontal"
-                      dataSource={data}
+                      dataSource={dataIndustrySkill}
                       bordered={false}
                       split={false}
                       renderItem={(item, index) => (
-                        <List.Item>
+                        <List.Item key={index}>
                           <List.Item.Meta
                             avatar={
-                              <RiArrowRightDoubleLine className="fill-black dark:fill-white mt-1" />
+                              <RiArrowRightDoubleLine className="fill-black dark:fill-white mt-2" />
                             }
                             description={
                               <div className="text-lg text-black dark:text-white">
-                                Ant Design, a design language for background
-                                applications, is refined by Ant UED Team
+                                {item.row}
                               </div>
                             }
                           />
