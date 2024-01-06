@@ -9,22 +9,20 @@ import {
   CustomTypographyParagraph,
   CustomTypographyTitle,
   PageLayout,
-  PageNoFooterLayout,
-  ScreenLayout,
 } from "../common";
 import { ArrowRightOutlined, CloudDownloadOutlined } from "@ant-design/icons";
 import { useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
 import { themeTextColor } from "../../variables/const";
 import { useTranslation } from "react-i18next";
+import { useLocalization } from "../../hooks/useLocalization";
 
 export const HomeScreen = () => {
-  const { t, i18n } = useTranslation();
-  const handleChangeTab = useOutletContext();
-  // console.log(handleChangeTab);
+  const { translate } = useLocalization();
+  const handleChangeTab: Function = useOutletContext();
   return (
     <PageLayout footer={false}>
-      <Flex className="h-[95vh] w-full" justify="center" align="center">
+      <Flex className="h-screen w-full" justify="center" align="center">
         <div className="h-fit w-fit">
           {/* <div className="h-fit w-[70vw] px-10 py-6 text-center bg-white/80 rounded-xl"> */}
           <BlockItem>
@@ -55,14 +53,14 @@ export const HomeScreen = () => {
                       <CustomTypographyTitle
                         extraClass={`!text-5xl w-fit !text-fuchsia-600`}
                       >
-                        Greeting, {t("Welcome to React")}
+                        {translate("Home.Greeting")},
                         <CustomTypographyTitle extraClass="!text-4xl mt-2 font-extralight text-black dark:text-white">
-                          Welcome to my portfolio
+                          {translate("Home.Greeting.Welcome")}
                         </CustomTypographyTitle>
                       </CustomTypographyTitle>
                       <a onClick={() => handleChangeTab("About")}>
                         <CustomTypographyParagraph extraClass="w-fit mx-auto -mt-9 text-center cursor-pointer hover:scale-105 transition">
-                          More about me &nbsp;
+                          {translate("Home.Greeting.More")} &nbsp;
                           <ArrowRightOutlined />
                         </CustomTypographyParagraph>
                       </a>
@@ -72,7 +70,7 @@ export const HomeScreen = () => {
                         icon={<CloudDownloadOutlined />}
                         type="text"
                       >
-                        RESUME
+                        {translate("Home.Greeting.Resume")}
                       </Button>
                     </Flex>
                   </div>

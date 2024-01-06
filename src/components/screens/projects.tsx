@@ -45,29 +45,30 @@ import ResumeGenerator from "../../assets/img/projects/ResumeGenerator/ResumeGen
 import ResumeGenerator_2 from "../../assets/img/projects/ResumeGenerator/ResumeGenerator_2.png";
 import MyBlog from "../../assets/img/projects/MyBlog/MyBlog.png";
 import { isEmpty } from "lodash";
-
-const dataIndustrySkill = [
-  {
-    row: "Worked on the company's app on the Zalo Mini App flatform to assist warehouse employees in submitting requests to address the issues they are currently facing.",
-  },
-  {
-    row: "Developed features like barcode/QR code scanning and attaching multiple documents, images, or multimedia files to help support staff better understand the issue and make inputting more efficient.",
-  },
-  {
-    row: "Helped solve bugs and errors in the front-end of the app.",
-  },
-  {
-    row: "Researched and developed a UIPath unattended bot to automate the process of getting incoming emails or email replies, then processing them and sending them back to the back-end to create a request node or comment on an existing request node.",
-  },
-];
+import { useLocalization } from "../../hooks/useLocalization";
 
 export const ProjectScreen = () => {
+  const { translate } = useLocalization();
+  const dataIndustrySkill = [
+    {
+      row: translate("Projects.Company_1.Content.1"),
+    },
+    {
+      row: translate("Projects.Company_1.Content.2"),
+    },
+    {
+      row: translate("Projects.Company_1.Content.3"),
+    },
+    {
+      row: translate("Projects.Company_1.Content.4"),
+    },
+  ];
   const renderPersonalProjects = (
     images: any[],
     url: string,
     preview: string,
-    title: string,
-    desc: string
+    title: any,
+    desc: any
   ) => {
     return (
       <Card className="mt-5 dark:bg-[#0c0a09]" bordered={false}>
@@ -105,7 +106,7 @@ export const ProjectScreen = () => {
               {!isEmpty(preview) && (
                 <a href={preview} target="_blank">
                   <h1 className="w-fit text-lg -mt-2 text-fuchsia-800 dark:text-fuchsia-500 font-montserrat hover:!text-fuchsia-500 dark:hover:!text-fuchsia-800 transition-all">
-                    <span>Preview</span>
+                    <span>{translate("Projects.Preview")}</span>
                   </h1>
                 </a>
               )}
@@ -125,12 +126,16 @@ export const ProjectScreen = () => {
               <Flex className="h-full w-full " justify="center" align="center">
                 <div className="h-fit w-full">
                   <CustomTypographyTitle extraClass="text-center">
-                    Industry Experiences
+                    {translate("Projects.IndustryExp")}
                   </CustomTypographyTitle>
                   <CustomTypographyParagraph extraClass="text-2xl text-center">
-                    <span className="!mt-4">eton Corp</span>
+                    <span className="!mt-4">
+                      {translate("Projects.Company_1")}
+                    </span>
                     <br />
-                    <span className="!mt-4">Front-end Developer Intern</span>
+                    <span className="!mt-4">
+                      {translate("Projects.Company_1.Position")}
+                    </span>
                     <br />
                     <span className="!mt-4">06/2023 - 10/2023</span>
                   </CustomTypographyParagraph>
@@ -167,49 +172,43 @@ export const ProjectScreen = () => {
               <Flex className="h-full w-full " justify="center" align="center">
                 <div className="h-fit w-full">
                   <CustomTypographyTitle extraClass="text-center">
-                    Personal Projects
+                    {translate("Projects.Personal")}
                   </CustomTypographyTitle>
                   <div className="h-fit w-full grid grid-cols-2 gap-5">
                     {renderPersonalProjects(
                       [MySimpleRadio, MySimpleRadio_2],
                       "https://github.com/holimm/MySimpleRadio",
                       "https://holimm.github.io/MySimpleRadio/",
-                      "My Simple Radio 🎶",
-                      `MySimpleRadio is a simple music player that streams from Youtube.
-                    Whether you are studying, playing games, or just relaxing.
-                    MySimpleRadio will deliver the best experience and make sure that
-                    you can focus on whatever you are doing.`
+                      translate("Projects.MySimpleRadio"),
+                      translate("Projects.MySimpleRadio.Content")
                     )}
                     {renderPersonalProjects(
                       [ResumeGenerator, ResumeGenerator_2],
                       "https://github.com/holimm/MyResume",
                       "https://holimm.github.io/MyResume/",
-                      "Resume Generator 📰",
-                      `MyResume is a simple resume generator that takes your input information and turns it into a resume. The app allows you to download PDF files as well as print out your generated resume.`
+                      translate("Projects.ResumeGenerator"),
+                      translate("Projects.ResumeGenerator.Content")
                     )}
                     {renderPersonalProjects(
                       [MineInUs],
                       "https://github.com/holimm/MineInUs",
                       "",
-                      "MineInUs 💰",
-                      `MySimpleRadio is a simple music player that streams from Youtube.
-                    Whether you are studying, playing games, or just relaxing.
-                    MySimpleRadio will deliver the best experience and make sure that
-                    you can focus on whatever you are doing.`
+                      translate("Projects.MineInUs"),
+                      translate("Projects.MineInUs.Content")
                     )}
                     {renderPersonalProjects(
                       [ClothesEcommerce],
                       "https://github.com/holimm/Ecommerce-Project",
                       "",
-                      "Clothes Ecommerce 👚",
-                      `Ecommerce Project completed in my 3rd year of university.`
+                      translate("Projects.ClothesEcommerce"),
+                      translate("Projects.ClothesEcommerce.Content")
                     )}
                     {renderPersonalProjects(
                       [MyBlog],
                       "https://github.com/holimm/MyBlog",
                       "",
-                      "MyBlog 📘",
-                      `MyBlog is a simple blog where I can post my daily life stories and my views on life. There were some problems during the deployment process, so a preview isn't available yet.`
+                      translate("Projects.MyBlog"),
+                      translate("Projects.MyBlog.Content")
                     )}
                   </div>
                 </div>

@@ -25,3 +25,8 @@ export interface DataSocialContactType {
   icon: any;
   label: string;
 }
+
+export interface TopNavDataType {
+  label: string;
+  tab: string;
+}

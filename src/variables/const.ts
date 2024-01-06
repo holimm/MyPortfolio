@@ -1,3 +1,4 @@
+import { useLocalization } from "../hooks/useLocalization";
 import { SkillDataType } from "./type";
 
 export const ScreenStyle = "h-full w-full";
@@ -8,6 +9,32 @@ export const urlHost = "/MyPortfolio";
 
 export const getTabColor = (bool: boolean) => {
   return bool ? "bg-sky-100" : "bg-sky-200";
+};
+
+export const TopNavData = () => {
+  const { translate } = useLocalization();
+  return [
+    {
+      id: 0,
+      label: translate("Nav.Home"),
+      tab: "Home",
+    },
+    {
+      id: 1,
+      label: translate("Nav.About"),
+      tab: "About",
+    },
+    {
+      id: 2,
+      label: translate("Nav.Projects"),
+      tab: "Projects",
+    },
+    {
+      id: 3,
+      label: translate("Nav.Contact"),
+      tab: "Contact",
+    },
+  ];
 };
 
 export const skillData: SkillDataType[] = [

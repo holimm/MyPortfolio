@@ -31,18 +31,18 @@ import ReactPlayer from "react-player";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { pdfjs } from "react-pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { useLocalization } from "./hooks/useLocalization.tsx";
+import { TopNavData } from "./variables/const.ts";
+import { TopNavDataType } from "./variables/type.ts";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
 ).toString();
 
-interface TopNavDataType {
-  label: string;
-}
-
 export const App = () => {
   const pathURL = window.location.pathname.match(/\/MyPortfolio\/(.*)/);
+  const { language, changeLanguage, translate } = useLocalization();
   const [currentSlide, setCurrentSlide] = useState(
     !isEmpty(pathURL) && pathURL !== null ? `${pathURL[1]}` : "Home"
   );
@@ -53,28 +53,13 @@ export const App = () => {
   const checkScreenChangingAnimation = screenChanging && screenOpenUp;
   const navigate = useNavigate();
   const [particle] = useState(<Particle />);
-
-  const topNavData = [
-    {
-      id: 0,
-      label: "Home",
-    },
-    {
-      id: 1,
-      label: "About",
-    },
-    {
-      id: 2,
-      label: "Projects",
-    },
-    {
-      id: 3,
-      label: "Contact",
-    },
-  ];
+  const topNavData = TopNavData();
 
   const handleDarkMode = (checked: boolean) => {
     setDarkMode(checked);
+  };
+  const handleChangeLanguage = (checked: boolean) => {
+    changeLanguage(checked ? "vi" : "en");
   };
 
   const items: MenuProps["items"] = [
@@ -101,6 +86,7 @@ export const App = () => {
             className="bg-neutral-400"
             checkedChildren={"VI"}
             unCheckedChildren={"EN"}
+            onChange={handleChangeLanguage}
           />
         </div>
       ),
@@ -129,10 +115,10 @@ export const App = () => {
     return (
       <Button
         className={`font-montserrat text-black dark:text-white ${
-          item.label === currentSlide && "!text-fuchsia-800"
+          item.tab === currentSlide && "!text-fuchsia-800"
         }`}
         type="text"
-        onClick={() => handleChangeTab(item.label)}
+        onClick={() => handleChangeTab(item.tab)}
         block
       >
         {item.label}
@@ -147,12 +133,13 @@ export const App = () => {
 
   return (
     <div className={`${darkMode && "dark"}`}>
-      <BlockItemHeader>
-        <div className="grid grid-cols-4 gap-10">
-          {topNavData.map((item, index) => (
-            <>{renderTopNav(item, index)}</>
-          ))}
-        </div>
+      <BlockItemHeader
+        makeUnder={currentSlide === "Resume" || pathURL[1] === "Resume"}
+        checkTab={pathURL[1]}
+      >
+        {topNavData.map((item, index) => (
+          <>{renderTopNav(item, index)}</>
+        ))}
       </BlockItemHeader>
       <BlockItemMenu>
         <Dropdown

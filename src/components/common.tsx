@@ -9,11 +9,12 @@ import {
   MenuProps,
   Row,
   Space,
+  Spin,
   Switch,
   Typography,
 } from "antd";
 import { motion } from "framer-motion";
-import { MouseEventHandler, ReactNode, useState } from "react";
+import { MouseEventHandler, ReactNode, useMemo, useState } from "react";
 import { ScreenStyle, themeTextColor } from "../variables/const";
 import "../css/common.css";
 import { isEmpty } from "lodash";
@@ -139,7 +140,7 @@ export const BlockItemPDF = ({ children }: { children: ReactNode }) => {
       className={`h-full w-full p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
+        className={`h-full w-full px-3 flex justify-center items-center bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
       >
         {children}
       </div>
@@ -164,20 +165,36 @@ export const BlockItemImage = ({ avatar }: { avatar: any }) => {
   );
 };
 
-export const BlockItemHeader = ({ children }: { children: ReactNode }) => {
-  return (
-    <div className="h-14 w-full flex justify-center items-center fixed top-3 z-50">
+export const BlockItemHeader = ({
+  children,
+  makeUnder,
+  checkTab,
+}: {
+  children: ReactNode;
+  makeUnder?: boolean;
+  checkTab?: string;
+}) => {
+  const renderTabCheck = () => {
+    if (checkTab === "Resume") return null;
+    return (
       <div
-        className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
+        className={`h-14 w-full flex justify-center items-center fixed top-3 ${
+          makeUnder ? "z-40" : "z-50"
+        }`}
       >
         <div
-          className={`h-full w-fit mx-auto px-5 py-2 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
+          className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
         >
-          {children}
+          <div
+            className={`h-full w-fit mx-auto px-5 py-2 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
+          >
+            <div className="grid grid-cols-4 gap-10">{children}</div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+  return renderTabCheck();
 };
 
 export const BlockItemMenu = ({ children }: { children: ReactNode }) => {
@@ -205,15 +222,18 @@ export const RenderPDFItem = ({
 }) => {
   const [numPages, setNumPages] = useState<number>();
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [isLoading, setIsLoading] = useState(false);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+    setIsLoading(false);
     setNumPages(numPages);
   }
 
   return (
     <Document
-      className={"h-fit w-fit"}
+      className={"h-screen w-fit min-w-[45vw]"}
       file={pdfFile}
+      onLoad={() => setIsLoading(true)}
       onLoadSuccess={onDocumentLoadSuccess}
       onLoadError={console.error}
     >
@@ -314,14 +334,16 @@ export const ContactSocialMedia = () => {
   return (
     <div className="mt-10">
       {dataSocialContact.map((item, index) => (
-        <a className="h-fit w-full" key={index} href={item.url} target="_blank">
-          <div className="mt-5 flex justify-start items-center">
+        <div className="w-fit mt-5 flex justify-start items-center hover:scale-105 transition-all">
+          <a className="w-fit" key={index} href={item.url} target="_blank">
             <div className="h-fit w-fit">{item.icon}</div>
+          </a>
+          <a className="w-fit" key={index} href={item.url} target="_blank">
             <div className="h-fit w-fit ml-4">
               <NormalTypography>{item.label}</NormalTypography>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       ))}
     </div>
   );
