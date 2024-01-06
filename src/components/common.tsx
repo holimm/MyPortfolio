@@ -1,11 +1,13 @@
 import {
   Button,
   Card,
+  Col,
   Dropdown,
   DropdownProps,
   Flex,
   Image,
   MenuProps,
+  Row,
   Space,
   Switch,
   Typography,
@@ -15,7 +17,10 @@ import { MouseEventHandler, ReactNode, useState } from "react";
 import { ScreenStyle, themeTextColor } from "../variables/const";
 import "../css/common.css";
 import { isEmpty } from "lodash";
-import { ScreenChangingAnimationType } from "../variables/type";
+import {
+  DataSocialContactType,
+  ScreenChangingAnimationType,
+} from "../variables/type";
 import { Document, Page } from "react-pdf";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
@@ -23,10 +28,38 @@ import { MenuOutlined } from "@ant-design/icons";
 import { CiMenuBurger } from "react-icons/ci";
 import { SwitchChangeEventHandler } from "antd/es/switch";
 
-interface IconButtonType {
-  icon?: React.ReactNode;
-  onClick?: React.MouseEventHandler<HTMLElement> | undefined;
-}
+const dataSocialContact: DataSocialContactType[] = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/nguyen-lim-thai-ho/",
+    icon: <FaLinkedin size={40} className="fill-black dark:fill-white" />,
+    label: "Thái Hồ Nguyễn Lim",
+  },
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/tea.limho/",
+    icon: <FaFacebook size={40} className="fill-black dark:fill-white" />,
+    label: "Hồ Lim  (임태호)",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/millohh_/",
+    icon: <FaInstagram size={40} className="fill-black dark:fill-white" />,
+    label: "millohh_",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/holimm",
+    icon: <FaGithub size={40} className="fill-black dark:fill-white" />,
+    label: "holimm",
+  },
+  {
+    name: "Mail",
+    url: "mailto:kahn12345678@gmail.com",
+    icon: <IoIosMail size={40} className="fill-black dark:fill-white" />,
+    label: "kahn12345678@gmail.com",
+  },
+];
 
 export const IconButton = ({ icon, url }: { icon: ReactNode; url: string }) => {
   return (
@@ -50,7 +83,7 @@ export const IconButtonFooter = ({
 }) => {
   return (
     <div
-      className={`h-fit w-fit bg-white/80 dark:bg-neutral-900/80 rounded-lg`}
+      className={`h-fit w-fit px-2 bg-white/80 dark:bg-neutral-900/80 rounded-lg scale-75`}
     >
       <a href={url} target="_blank">
         <Button
@@ -78,14 +111,20 @@ export const ScreenLayout = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const BlockItem = ({ children }: { children: ReactNode }) => {
+export const BlockItem = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) => {
   return (
     // <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
     <div
       className={`h-fit w-full flex justify-center items-center p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
+        className={`h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg ${className}`}
       >
         {children}
       </div>
@@ -217,6 +256,22 @@ export const CustomTypographyTitle = ({
   </Typography.Title>
 );
 
+export const NormalTypography = ({
+  children,
+  extraClass,
+}: {
+  children: ReactNode;
+  extraClass?: string;
+}) => (
+  <p
+    className={`text-lg text-black dark:text-white font-montserrat ${
+      !isEmpty(extraClass) && extraClass
+    }`}
+  >
+    {children}
+  </p>
+);
+
 export const SkillList = ({ skillData }: { skillData: any[] }) => {
   return (
     <div className="h-fit max-h-[37em] overflow-y-auto w-full grid grid-cols-5 gap-5">
@@ -243,43 +298,51 @@ export const SkillList = ({ skillData }: { skillData: any[] }) => {
   );
 };
 
+export const AboutSocialMedia = () => {
+  return (
+    <>
+      {dataSocialContact.map((item, index) => (
+        <Col>
+          <IconButton key={index} icon={item.icon} url={item.url}></IconButton>
+        </Col>
+      ))}
+    </>
+  );
+};
+
+export const ContactSocialMedia = () => {
+  return (
+    <div className="mt-10">
+      {dataSocialContact.map((item, index) => (
+        <a className="h-fit w-full" key={index} href={item.url} target="_blank">
+          <div className="mt-5 flex justify-start items-center">
+            <div className="h-fit w-fit">{item.icon}</div>
+            <div className="h-fit w-fit ml-4">
+              <NormalTypography>{item.label}</NormalTypography>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  );
+};
+
 export const ScreenFooter = () => {
   return (
     <>
       <div className="h-fit w-full flex justify-center mt-14">
         <div className="h-fit w-fit">
-          <Space className="mx-auto mt-3" direction="horizontal" size="large">
-            <IconButtonFooter
-              icon={
-                <FaLinkedin size={28} className="fill-black dark:fill-white" />
-              }
-              url="https://www.linkedin.com/in/nguyen-lim-thai-ho/"
-            ></IconButtonFooter>
-            <IconButtonFooter
-              icon={
-                <FaFacebook size={28} className="fill-black dark:fill-white" />
-              }
-              url="https://www.facebook.com/tea.limho/"
-            ></IconButtonFooter>
-            <IconButtonFooter
-              icon={
-                <FaInstagram size={28} className="fill-black dark:fill-white" />
-              }
-              url="https://www.instagram.com/millohh_/"
-            ></IconButtonFooter>
-            <IconButtonFooter
-              icon={
-                <FaGithub size={28} className="fill-black dark:fill-white" />
-              }
-              url="https://github.com/holimm"
-            ></IconButtonFooter>
-            <IconButtonFooter
-              icon={
-                <IoIosMail size={28} className="fill-black dark:fill-white" />
-              }
-              url="mailto:kahn12345678@gmail.com"
-            ></IconButtonFooter>
-          </Space>
+          <Row className="mx-auto mt-3" gutter={8}>
+            {dataSocialContact.map((item, index) => (
+              <Col>
+                <IconButtonFooter
+                  key={index}
+                  icon={item.icon}
+                  url={item.url}
+                ></IconButtonFooter>
+              </Col>
+            ))}
+          </Row>
         </div>
       </div>
       <Typography.Paragraph className="text-xl text-white dark:text-neutral-300 text-center mt-4 pb-10">
@@ -289,22 +352,18 @@ export const ScreenFooter = () => {
   );
 };
 
-export const PageLayout = ({ children }: { children: ReactNode }) => {
+export const PageLayout = ({
+  children,
+  footer = true,
+}: {
+  children: ReactNode;
+  footer?: boolean;
+}) => {
   return (
     <div className={`${ScreenStyle}`}>
       <div className="h-fit w-full max-h-screen overflow-y-auto overflow-x-hidden">
         <ScreenLayout>{children}</ScreenLayout>
-        <ScreenFooter />
-      </div>
-    </div>
-  );
-};
-
-export const PageNoFooterLayout = ({ children }: { children: ReactNode }) => {
-  return (
-    <div className={`${ScreenStyle}`}>
-      <div className="h-fit w-full max-h-screen overflow-y-auto overflow-x-hidden">
-        <ScreenLayout>{children}</ScreenLayout>
+        {footer && <ScreenFooter />}
       </div>
     </div>
   );

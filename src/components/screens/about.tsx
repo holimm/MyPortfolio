@@ -1,6 +1,8 @@
 import {
   Card,
   Col,
+  DatePicker,
+  DatePickerProps,
   Divider,
   Flex,
   Image,
@@ -12,6 +14,7 @@ import {
 import "../../css/scrollbar.css";
 import AvatarHoLim from "../../assets/img/avatar.jpg";
 import {
+  AboutSocialMedia,
   BlockItem,
   BlockItemImage,
   BlockItemPDF,
@@ -33,9 +36,15 @@ import { IoIosMail } from "react-icons/io";
 import { skillData } from "../../variables/const";
 import GitHubCalendar from "react-github-calendar";
 import { Document, Page } from "react-pdf";
+import dayjs from "dayjs";
 import React_Basic_Certificate from "../../assets/img/certificates/React_Basic_Certificate.png";
+import { useState } from "react";
+import { RangePickerProps } from "antd/es/date-picker";
 
 export const AboutScreen = () => {
+  const [githubCalendarDate, setGithubCalenderDate] = useState(
+    new Date().getFullYear()
+  );
   const renderSkillRow = (type: string) => {
     return (
       <div className="mt-8">
@@ -52,6 +61,17 @@ export const AboutScreen = () => {
         <Image src={certificate} />
       </Col>
     );
+  };
+  const onChangeYearPicker: DatePickerProps["onChange"] = (
+    date,
+    dateString
+  ) => {
+    setGithubCalenderDate(Number(dateString));
+  };
+  const disabledDate: RangePickerProps["disabledDate"] = (current) => {
+    const yearStart = dayjs("2021").startOf("year");
+    const yearEnd = dayjs().endOf("year");
+    return !(yearStart <= current && yearEnd.isAfter(current));
   };
 
   return (
@@ -72,53 +92,9 @@ export const AboutScreen = () => {
                     trends through online learning. Excited for new challenges
                     and opportunities to grow!
                   </CustomTypographyParagraph>
-                  <Space className="mt-3" direction="horizontal" size="large">
-                    <IconButton
-                      icon={
-                        <FaLinkedin
-                          size={40}
-                          className="fill-black dark:fill-white"
-                        />
-                      }
-                      url="https://www.linkedin.com/in/nguyen-lim-thai-ho/"
-                    ></IconButton>
-                    <IconButton
-                      icon={
-                        <FaFacebook
-                          size={40}
-                          className="fill-black dark:fill-white"
-                        />
-                      }
-                      url="https://www.facebook.com/tea.limho/"
-                    ></IconButton>
-                    <IconButton
-                      icon={
-                        <FaInstagram
-                          size={40}
-                          className="fill-black dark:fill-white"
-                        />
-                      }
-                      url="https://www.instagram.com/millohh_/"
-                    ></IconButton>
-                    <IconButton
-                      icon={
-                        <FaGithub
-                          size={40}
-                          className="fill-black dark:fill-white"
-                        />
-                      }
-                      url="https://github.com/holimm"
-                    ></IconButton>
-                    <IconButton
-                      icon={
-                        <IoIosMail
-                          size={40}
-                          className="fill-black dark:fill-white"
-                        />
-                      }
-                      url="mailto:kahn12345678@gmail.com"
-                    ></IconButton>
-                  </Space>
+                  <Row className="mt-3" gutter={14}>
+                    <AboutSocialMedia />
+                  </Row>
                 </div>
               </Flex>
             </BlockItem>
@@ -161,12 +137,24 @@ export const AboutScreen = () => {
           <Col span={24} className="h-full w-full">
             <BlockItem>
               <div className="h-full w-full flex justify-center items-center">
-                <div>
+                <div className="h-fit w-full">
                   <CustomTypographyTitle extraClass="text-center">
                     GitHub Contributions
                   </CustomTypographyTitle>
-                  <div className="w-fit xs:max-w-[24%] sm:max-w-[30%] md:max-w-[50%] lg:max-w-[65%] xl:max-w-full mx-auto mt-12 text-black dark:text-white ">
-                    <GitHubCalendar username="holimm" />
+
+                  <div className="w-fit max-w-full mx-auto mt-12 text-black dark:text-white ">
+                    <GitHubCalendar
+                      username="holimm"
+                      year={githubCalendarDate}
+                    />
+                    <Space className="mt-4">
+                      <DatePicker
+                        onChange={onChangeYearPicker}
+                        disabledDate={disabledDate}
+                        picker="year"
+                        defaultValue={dayjs(dayjs(), "YYYY")}
+                      />
+                    </Space>
                   </div>
                 </div>
               </div>

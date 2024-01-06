@@ -2,6 +2,7 @@ import { Button, Col, Divider, Flex, Image, List, Row, Typography } from "antd";
 import "../../css/scrollbar.css";
 import Lottie from "lottie-react";
 import purpleBot from "../../assets/json/purple-bot.json";
+import wavePurple from "../../assets/json/wave-purple.json";
 import TypeAnimation from "react-type-animation";
 import {
   BlockItem,
@@ -22,14 +23,14 @@ export const HomeScreen = () => {
   const handleChangeTab = useOutletContext();
   // console.log(handleChangeTab);
   return (
-    <PageNoFooterLayout>
+    <PageLayout footer={false}>
       <Flex className="h-[95vh] w-full" justify="center" align="center">
         <div className="h-fit w-fit">
           {/* <div className="h-fit w-[70vw] px-10 py-6 text-center bg-white/80 rounded-xl"> */}
           <BlockItem>
             <div className="h-[60vh] w-[65vw]">
               <Row className="h-full w-full" gutter={32}>
-                <Col className="h-full" span={12}>
+                <Col className="h-full relative" span={12}>
                   <Flex
                     className="h-full w-full"
                     justify="center"
@@ -82,6 +83,6 @@ export const HomeScreen = () => {
           {/* </div> */}
         </div>
       </Flex>
-    </PageNoFooterLayout>
+    </PageLayout>
   );
 };
