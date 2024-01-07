@@ -1,14 +1,8 @@
 import { useMemo } from "react";
-import { Page } from "react-pdf";
-import MyCV from "../../assets/pdf/CV.pdf";
-import MyCV_EN from "../../assets/pdf/CV_EN.pdf";
-import {
-  BlockItemHeader,
-  BlockItemPDF,
-  PageLayout,
-  RenderPDFItem,
-} from "../common";
-import { Button, Flex } from "antd";
+import MyCV from "../../assets/resume/CV.png";
+import MyCV_EN from "../../assets/resume/CV_EN.png";
+import { BlockItemHeader, BlockItemResume, PageLayout } from "../common";
+import { Button, Flex, Image } from "antd";
 import { useLocalization } from "../../hooks/useLocalization";
 import { TopNavData } from "../../variables/const";
 import { useOutletContext } from "react-router-dom";
@@ -36,6 +30,7 @@ export const ResumeScreen = () => {
       </Button>
     );
   };
+
   return (
     <PageLayout footer={false}>
       <div className="h-fit w-[95%] lg:w-[72%] xl:w-[55%]">
@@ -62,23 +57,9 @@ export const ResumeScreen = () => {
               <>{renderTopNav(item, index)}</>
             ))}
           </BlockItemHeader>
-          <RenderPDFItem pdfFile={resume}>
-            {(pageNumber: number) => (
-              <>
-                <BlockItemPDF>
-                  <Page
-                    className={
-                      "h-fit max-h-[95vh] w-fit scale-[0.7] md:scale-100 overflow-y-auto shadow-xl"
-                    }
-                    scale={1}
-                    pageNumber={pageNumber}
-                    renderTextLayer={false}
-                    renderAnnotationLayer={false}
-                  />
-                </BlockItemPDF>
-              </>
-            )}
-          </RenderPDFItem>
+          <BlockItemResume>
+            <Image className="h-full w-full max-h-[95vh]" src={resume} />
+          </BlockItemResume>
         </Flex>
       </div>
     </PageLayout>

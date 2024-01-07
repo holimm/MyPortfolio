@@ -1,6 +1,6 @@
 import { Button, Card, Col, Image, Row, Typography } from "antd";
 import { motion } from "framer-motion";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
 import { ScreenStyle } from "../variables/const";
 import "../css/common.css";
 import { isEmpty } from "lodash";
@@ -8,7 +8,6 @@ import {
   DataSocialContactType,
   ScreenChangingAnimationType,
 } from "../variables/type";
-import { Document } from "react-pdf";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 
@@ -116,14 +115,14 @@ export const BlockItem = ({
   );
 };
 
-export const BlockItemPDF = ({ children }: { children: ReactNode }) => {
+export const BlockItemResume = ({ children }: { children: ReactNode }) => {
   return (
     // <div className="h-full w-full flex justify-center items-center p-2 bg-slate-100/20 backdrop-blur-3xl rounded-xl">
     <div
-      className={`h-full w-full p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
+      className={`h-fit w-fit p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full px-3 flex justify-center items-center bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
+        className={`h-fit w-fit p-5 flex justify-center items-center bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg`}
       >
         {children}
       </div>
@@ -195,26 +194,6 @@ export const BlockItemMenu = ({ children }: { children: ReactNode }) => {
         </div>
       </div>
     </div>
-  );
-};
-
-export const RenderPDFItem = ({
-  children,
-  pdfFile,
-}: {
-  children: any;
-  pdfFile: any;
-}) => {
-  const [pageNumber] = useState<number>(1);
-
-  return (
-    <Document
-      className={"h-screen w-fit"}
-      file={pdfFile}
-      onLoadError={console.error}
-    >
-      {children(pageNumber)}
-    </Document>
   );
 };
 

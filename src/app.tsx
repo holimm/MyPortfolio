@@ -10,16 +10,10 @@ import {
   ChangingScreenAnimation,
 } from "./components/common.tsx";
 import ReactPlayer from "react-player";
-import { pdfjs } from "react-pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocalization } from "./hooks/useLocalization.tsx";
 import { TopNavData } from "./variables/const.ts";
 import { TopNavDataType } from "./variables/type.ts";
-
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.js",
-  import.meta.url
-).toString();
 
 export const App = () => {
   const pathURL = window.location.pathname.match(/\/MyPortfolio\/(.*)/);
