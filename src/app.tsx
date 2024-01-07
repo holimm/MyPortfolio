@@ -131,12 +131,12 @@ export const App = () => {
           open={openMenu}
           placement="topLeft"
         >
-          <a className="cursor-pointer" onClick={(e) => e.preventDefault()}>
+          <span className="cursor-pointer" onClick={(e) => e.preventDefault()}>
             <GiHamburgerMenu
               className="fill-black dark:fill-white hover:scale-[1.2] transition-all"
               size={20}
             />
-          </a>
+          </span>
         </Dropdown>
       </BlockItemMenu>
       <div className="h-screen w-screen absolute top-0 z-30 bg-transparent dark:bg-black/50"></div>

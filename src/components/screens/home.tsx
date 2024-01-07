@@ -56,12 +56,12 @@ export const HomeScreen = () => {
                           {translate("Home.Greeting.Welcome")}
                         </CustomTypographyTitle>
                       </CustomTypographyTitle>
-                      <a onClick={() => handleChangeTab("About")}>
+                      <span onClick={() => handleChangeTab("About")}>
                         <CustomTypographyParagraph extraClass="w-fit mx-auto -mt-9 text-center cursor-pointer hover:scale-105 transition">
                           {translate("Home.Greeting.More")} &nbsp;
                           <ArrowRightOutlined />
                         </CustomTypographyParagraph>
-                      </a>
+                      </span>
                       <Button
                         className="w-fit mt-4 bg-yellow-400"
                         onClick={() => handleChangeTab("Resume")}

@@ -59,7 +59,7 @@ export const ProjectScreen = () => {
         <Card.Meta
           className="!mt-4"
           title={
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noreferrer">
               <h1 className="w-fit text-2xl text-black dark:text-white font-montserrat hover:!text-fuchsia-800 transition-all">
                 {title}
               </h1>
@@ -74,7 +74,7 @@ export const ProjectScreen = () => {
                 {desc}
               </Typography.Paragraph>
               {!isEmpty(preview) && (
-                <a href={preview} target="_blank">
+                <a href={preview} target="_blank" rel="noreferrer">
                   <h1 className="w-fit text-lg -mt-2 text-fuchsia-800 dark:text-fuchsia-500 font-montserrat hover:!text-fuchsia-500 dark:hover:!text-fuchsia-800 transition-all">
                     <span>{translate("Projects.Preview")}</span>
                   </h1>

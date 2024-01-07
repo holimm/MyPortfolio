@@ -47,7 +47,7 @@ const dataSocialContact: DataSocialContactType[] = [
 
 export const IconButton = ({ icon, url }: { icon: ReactNode; url: string }) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" rel="noreferrer">
       <Button
         className="hover:scale-110"
         type="text"
@@ -69,7 +69,7 @@ export const IconButtonFooter = ({
     <div
       className={`h-fit w-fit px-2 bg-white/80 dark:bg-neutral-900/80 rounded-lg scale-75`}
     >
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noreferrer">
         <Button
           className="hover:scale-110"
           type="text"
@@ -205,21 +205,12 @@ export const RenderPDFItem = ({
   children: any;
   pdfFile: any;
 }) => {
-  const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
-  const [isLoading, setIsLoading] = useState(false);
-
-  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-    setIsLoading(false);
-    setNumPages(numPages);
-  }
+  const [pageNumber] = useState<number>(1);
 
   return (
     <Document
       className={"h-screen w-fit"}
       file={pdfFile}
-      onLoad={() => setIsLoading(true)}
-      onLoadSuccess={onDocumentLoadSuccess}
       onLoadError={console.error}
     >
       {children(pageNumber)}
@@ -320,10 +311,22 @@ export const ContactSocialMedia = () => {
     <div className="mt-10">
       {dataSocialContact.map((item, index) => (
         <div className="w-fit mt-5 flex justify-start items-center hover:scale-105 transition-all">
-          <a className="w-fit" key={index} href={item.url} target="_blank">
+          <a
+            className="w-fit"
+            key={index}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="h-fit w-fit">{item.icon}</div>
           </a>
-          <a className="w-fit" key={index} href={item.url} target="_blank">
+          <a
+            className="w-fit"
+            key={index}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="h-fit w-fit ml-4">
               <NormalTypography>{item.label}</NormalTypography>
             </div>
