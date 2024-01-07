@@ -112,7 +112,7 @@ export const App = () => {
     >
       <BlockItemHeader
         makeUnder={currentSlide === "Resume"}
-        checkTab={!isEmpty(pathURL) && pathURL[1]}
+        checkTab={!isEmpty(pathURL) && `${pathURL[1]}`}
       >
         {topNavData.map((item, index) => (
           <>{renderTopNav(item, index)}</>

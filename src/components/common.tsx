@@ -163,7 +163,7 @@ export const BlockItemHeader = ({
     return (
       <div
         className={`h-14 w-full flex justify-center items-center fixed top-3 ${
-          makeUnder ? "z-[50]" : "z-[60]"
+          makeUnder ? "z-[40]" : "z-[50]"
         } ${extraClass && extraClass}`}
       >
         <div
