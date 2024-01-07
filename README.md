@@ -5,6 +5,10 @@ This is my simple portfolio website. It's a basic summary of my journey to becom
 ## Preview - [Live Site](https://holimm.github.io/MyPortfolio/)
 ![portfolio](https://github.com/holimm/MyPortfolio/assets/95845053/6058f591-8aac-4dc4-ab0d-27d3cbf11449)
 
+## 🔑 Features
+<li>Dark mode</li>
+<li>Change Languages (en/vi)</li>
+
 ## 🔧 Tools
 <li><a href="https://reactjs.org/">ReactJS</a></li>
 <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
