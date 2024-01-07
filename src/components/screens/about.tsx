@@ -1,15 +1,11 @@
 import {
-  Card,
   Col,
   DatePicker,
   DatePickerProps,
-  Divider,
   Flex,
   Image,
-  List,
   Row,
   Space,
-  Typography,
 } from "antd";
 import "../../css/scrollbar.css";
 import AvatarHoLim from "../../assets/img/avatar.jpg";
@@ -17,25 +13,13 @@ import {
   AboutSocialMedia,
   BlockItem,
   BlockItemImage,
-  BlockItemPDF,
   CustomTypographyParagraph,
   CustomTypographyTitle,
-  IconButton,
   PageLayout,
-  RenderPDFItem,
   SkillList,
 } from "../common";
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaNimblr,
-} from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
 import { skillData } from "../../variables/const";
 import GitHubCalendar from "react-github-calendar";
-import { Document, Page } from "react-pdf";
 import dayjs from "dayjs";
 import React_Basic_Certificate from "../../assets/img/certificates/React_Basic_Certificate.png";
 import { useState } from "react";

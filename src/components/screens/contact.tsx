@@ -1,31 +1,11 @@
-import {
-  Card,
-  Carousel,
-  Col,
-  Divider,
-  Flex,
-  Image,
-  List,
-  Row,
-  Space,
-  Typography,
-} from "antd";
+import { Col, Flex, Row } from "antd";
 import "../../css/scrollbar.css";
-import AvatarHoLim from "../../assets/img/avatar.jpg";
 import {
   BlockItem,
-  BlockItemImage,
-  BlockItemPDF,
   ContactSocialMedia,
-  CustomTypographyParagraph,
-  CustomTypographyTitle,
-  IconButton,
   NormalTypography,
   PageLayout,
-  RenderPDFItem,
-  SkillList,
 } from "../common";
-import { RiArrowRightDoubleLine } from "react-icons/ri";
 import contactPerson from "../../assets/json/contact-person.json";
 import Lottie from "lottie-react";
 import { useLocalization } from "../../hooks/useLocalization";

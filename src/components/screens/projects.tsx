@@ -1,41 +1,11 @@
-import {
-  Card,
-  Carousel,
-  Col,
-  Divider,
-  Flex,
-  Image,
-  List,
-  Row,
-  Space,
-  Typography,
-} from "antd";
+import { Card, Carousel, Col, Flex, Image, List, Row, Typography } from "antd";
 import "../../css/scrollbar.css";
-import AvatarHoLim from "../../assets/img/avatar.jpg";
 import {
   BlockItem,
-  BlockItemImage,
-  BlockItemPDF,
   CustomTypographyParagraph,
   CustomTypographyTitle,
-  IconButton,
   PageLayout,
-  RenderPDFItem,
-  SkillList,
 } from "../common";
-import {
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaNimblr,
-} from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
-import { skillData } from "../../variables/const";
-import GitHubCalendar from "react-github-calendar";
-import { Document, Page } from "react-pdf";
-import React_Basic_Certificate from "../../assets/img/certificates/React_Basic_Certificate.png";
-import { CaretRightOutlined } from "@ant-design/icons";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
 import MySimpleRadio from "../../assets/img/projects/MySimpleRadio/MySimpleRadio.png";
 import MySimpleRadio_2 from "../../assets/img/projects/MySimpleRadio/MySimpleRadio_2.png";

@@ -1,5 +1,5 @@
 import { toString } from "lodash";
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
 export const useLocalization = () => {

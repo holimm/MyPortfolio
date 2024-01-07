@@ -1,25 +1,7 @@
-import React, { ReactNode, useCallback, useRef, useState } from "react";
-import ReactDOM from "react-dom/client";
-import { motion } from "framer-motion";
-import Particle from "./particles/particles.tsx";
+import { useState } from "react";
 import "./css/scrollbar.css";
-import {
-  Button,
-  Carousel,
-  Col,
-  Dropdown,
-  DropdownProps,
-  Flex,
-  MenuProps,
-  Row,
-  Space,
-  Switch,
-} from "antd";
-import { AboutScreen } from "./components/screens/about.tsx";
-import { isEmpty, isEqual } from "lodash";
-import { ProjectScreen } from "./components/screens/projects.tsx";
-import { ContactScreen } from "./components/screens/contact.tsx";
-import { HomeScreen } from "./components/screens/home.tsx";
+import { Button, Dropdown, DropdownProps, MenuProps, Switch } from "antd";
+import { isEmpty } from "lodash";
 import "./css/common.css";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
@@ -28,7 +10,6 @@ import {
   ChangingScreenAnimation,
 } from "./components/common.tsx";
 import ReactPlayer from "react-player";
-import { FaMoon, FaSun } from "react-icons/fa";
 import { pdfjs } from "react-pdf";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useLocalization } from "./hooks/useLocalization.tsx";
@@ -42,7 +23,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
 
 export const App = () => {
   const pathURL = window.location.pathname.match(/\/MyPortfolio\/(.*)/);
-  const { language, changeLanguage, translate } = useLocalization();
+  const { changeLanguage } = useLocalization();
   const [currentSlide, setCurrentSlide] = useState(
     !isEmpty(pathURL) && pathURL !== null ? `${pathURL[1]}` : "Home"
   );
@@ -50,9 +31,7 @@ export const App = () => {
   const [screenOpenUp, setScreenOpenUp] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const checkScreenChangingAnimation = screenChanging && screenOpenUp;
   const navigate = useNavigate();
-  const [particle] = useState(<Particle />);
   const topNavData = TopNavData();
 
   const handleDarkMode = (checked: boolean) => {

@@ -1,33 +1,16 @@
-import {
-  Button,
-  Card,
-  Col,
-  Dropdown,
-  DropdownProps,
-  Flex,
-  Image,
-  MenuProps,
-  Row,
-  Space,
-  Spin,
-  Switch,
-  Typography,
-} from "antd";
+import { Button, Card, Col, Image, Row, Typography } from "antd";
 import { motion } from "framer-motion";
-import { MouseEventHandler, ReactNode, useMemo, useState } from "react";
-import { ScreenStyle, themeTextColor } from "../variables/const";
+import { ReactNode, useState } from "react";
+import { ScreenStyle } from "../variables/const";
 import "../css/common.css";
 import { isEmpty } from "lodash";
 import {
   DataSocialContactType,
   ScreenChangingAnimationType,
 } from "../variables/type";
-import { Document, Page } from "react-pdf";
+import { Document } from "react-pdf";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
-import { MenuOutlined } from "@ant-design/icons";
-import { CiMenuBurger } from "react-icons/ci";
-import { SwitchChangeEventHandler } from "antd/es/switch";
 
 const dataSocialContact: DataSocialContactType[] = [
   {

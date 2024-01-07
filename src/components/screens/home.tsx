@@ -1,9 +1,7 @@
-import { Button, Col, Divider, Flex, Image, List, Row, Typography } from "antd";
+import { Button, Col, Flex, Row } from "antd";
 import "../../css/scrollbar.css";
 import Lottie from "lottie-react";
 import purpleBot from "../../assets/json/purple-bot.json";
-import wavePurple from "../../assets/json/wave-purple.json";
-import TypeAnimation from "react-type-animation";
 import {
   BlockItem,
   CustomTypographyParagraph,
@@ -12,9 +10,6 @@ import {
 } from "../common";
 import { ArrowRightOutlined, CloudDownloadOutlined } from "@ant-design/icons";
 import { useOutletContext } from "react-router-dom";
-import { useEffect } from "react";
-import { themeTextColor } from "../../variables/const";
-import { useTranslation } from "react-i18next";
 import { useLocalization } from "../../hooks/useLocalization";
 
 export const HomeScreen = () => {
@@ -54,7 +49,7 @@ export const HomeScreen = () => {
                       vertical
                     >
                       <CustomTypographyTitle
-                        extraClass={`!text-5xl w-fit !text-fuchsia-600`}
+                        extraClass={`!text-5xl w-fit !text-fuchsia-800`}
                       >
                         {translate("Home.Greeting")},
                         <CustomTypographyTitle extraClass="!text-4xl mt-2 font-extralight text-black dark:text-white">

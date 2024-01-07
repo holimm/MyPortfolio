@@ -1,6 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Document, Page } from "react-pdf";
-import { pdfjs } from "react-pdf";
+import { useMemo } from "react";
+import { Page } from "react-pdf";
 import MyCV from "../../assets/pdf/CV.pdf";
 import MyCV_EN from "../../assets/pdf/CV_EN.pdf";
 import {
