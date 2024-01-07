@@ -119,7 +119,7 @@ export const ProjectScreen = () => {
 
   return (
     <PageLayout>
-      <div className="h-full w-[55%] mt-24 grid grid-cols-1 gap-y-5">
+      <div className="h-full w-[95%] lg:w-[72%] xl:w-[55%] mt-24 grid grid-cols-1 gap-y-5">
         <Row gutter={20}>
           <Col span={24} className="h-full w-full">
             <BlockItem>
@@ -174,7 +174,7 @@ export const ProjectScreen = () => {
                   <CustomTypographyTitle extraClass="text-center">
                     {translate("Projects.Personal")}
                   </CustomTypographyTitle>
-                  <div className="h-fit w-full grid grid-cols-2 gap-5">
+                  <div className="h-fit w-full grid grid-cols-1 md:grid-cols-2 gap-5">
                     {renderPersonalProjects(
                       [MySimpleRadio, MySimpleRadio_2],
                       "https://github.com/holimm/MySimpleRadio",

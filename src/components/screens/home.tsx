@@ -21,35 +21,38 @@ export const HomeScreen = () => {
   const { translate } = useLocalization();
   const handleChangeTab: Function = useOutletContext();
   return (
-    <PageLayout footer={false}>
+    <PageLayout>
       <Flex className="h-screen w-full" justify="center" align="center">
-        <div className="h-fit w-fit">
+        <div className="h-fit w-[95%] lg:w-[72%] xl:w-[55%] mt-16 lg:mt-0">
           {/* <div className="h-fit w-[70vw] px-10 py-6 text-center bg-white/80 rounded-xl"> */}
           <BlockItem>
-            <div className="h-[60vh] w-[65vw]">
+            <div className="h-fit w-full">
               <Row className="h-full w-full" gutter={32}>
-                <Col className="h-full relative" span={12}>
+                <Col
+                  className="h-1/2 md:h-full relative"
+                  span={12}
+                  xs={{ span: 24 }}
+                  md={{ span: 12 }}
+                >
                   <Flex
-                    className="h-full w-full"
+                    className="h-full w-full md:w-full"
                     justify="center"
                     align="center"
                   >
                     <Lottie
-                      className="mx-auto mt-10"
+                      className="w-[75%] md:w-full mx-auto mt-10"
                       animationData={purpleBot}
                     />
                   </Flex>
                 </Col>
-                <Col span={12}>
-                  <div className="h-full w-full grid grid-cols-1">
-                    <Flex align="start" justify="center" vertical>
-                      {/* <TypeAnimation
-                        sequence={["Welcome to my Portfolio..", 1000, "", 1000]}
-                        wrapper="span"
-                        speed={50}
-                        style={{ display: "inline-block" }}
-                        repeat={Infinity}
-                      /> */}
+                <Col span={12} xs={{ span: 24 }} md={{ span: 12 }}>
+                  <div className="h-1/2 md:h-full w-full grid grid-cols-1">
+                    <Flex
+                      className="mt-5 md:mt-0"
+                      align="start"
+                      justify="center"
+                      vertical
+                    >
                       <CustomTypographyTitle
                         extraClass={`!text-5xl w-fit !text-fuchsia-600`}
                       >

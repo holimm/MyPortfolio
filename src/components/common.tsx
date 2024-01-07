@@ -125,7 +125,7 @@ export const BlockItem = ({
       className={`h-fit w-full flex justify-center items-center p-2 text-white transition-all bg-slate-100/40 dark:bg-neutral-800/40 backdrop-blur-3xl rounded-xl`}
     >
       <div
-        className={`h-full w-full px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg ${className}`}
+        className={`h-full w-full px-4 md:px-6 lg:px-8 py-16 bg-white/80 dark:bg-neutral-900/80 rounded-xl shadow-lg ${className}`}
       >
         {children}
       </div>
@@ -169,18 +169,20 @@ export const BlockItemHeader = ({
   children,
   makeUnder,
   checkTab,
+  extraClass,
 }: {
   children: ReactNode;
   makeUnder?: boolean;
-  checkTab?: string;
+  checkTab?: any;
+  extraClass?: string;
 }) => {
   const renderTabCheck = () => {
     if (checkTab === "Resume") return null;
     return (
       <div
         className={`h-14 w-full flex justify-center items-center fixed top-3 ${
-          makeUnder ? "z-40" : "z-50"
-        }`}
+          makeUnder ? "z-[50]" : "z-[60]"
+        } ${extraClass && extraClass}`}
       >
         <div
           className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
@@ -199,12 +201,12 @@ export const BlockItemHeader = ({
 
 export const BlockItemMenu = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="h-fit w-fit flex justify-center items-center fixed bottom-16 right-16 z-50">
+    <div className="h-16 w-16 flex justify-center items-center fixed bottom-10 right-10 lg:bottom-16 lg:right-16 z-50">
       <div
-        className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
+        className={`h-fit w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
       >
         <div
-          className={`h-full w-fit mx-auto p-4 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
+          className={`h-fit w-fit mx-auto p-4 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
         >
           {children}
         </div>
@@ -231,7 +233,7 @@ export const RenderPDFItem = ({
 
   return (
     <Document
-      className={"h-screen w-fit min-w-[45vw]"}
+      className={"h-screen w-fit"}
       file={pdfFile}
       onLoad={() => setIsLoading(true)}
       onLoadSuccess={onDocumentLoadSuccess}
@@ -294,7 +296,7 @@ export const NormalTypography = ({
 
 export const SkillList = ({ skillData }: { skillData: any[] }) => {
   return (
-    <div className="h-fit max-h-[37em] overflow-y-auto w-full grid grid-cols-5 gap-5">
+    <div className="h-fit max-h-[37em] overflow-y-auto w-full grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-5 gap-5">
       {!isEmpty(skillData) &&
         skillData.map((item: any) => (
           <Card
@@ -351,7 +353,7 @@ export const ContactSocialMedia = () => {
 
 export const ScreenFooter = () => {
   return (
-    <>
+    <div className="h-fit w-full pb-24 md:pb-16 lg:pb-0">
       <div className="h-fit w-full flex justify-center mt-14">
         <div className="h-fit w-fit">
           <Row className="mx-auto mt-3" gutter={8}>
@@ -370,7 +372,7 @@ export const ScreenFooter = () => {
       <Typography.Paragraph className="text-xl text-white dark:text-neutral-300 text-center mt-4 pb-10">
         © 2023 | Nguyen Lim Thai Ho
       </Typography.Paragraph>
-    </>
+    </div>
   );
 };
 

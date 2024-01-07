@@ -132,10 +132,14 @@ export const App = () => {
   };
 
   return (
-    <div className={`${darkMode && "dark"}`}>
+    <div
+      className={`h-screen w-screen ${
+        darkMode && "dark"
+      } overflow-x-hidden overflow-y-hidden`}
+    >
       <BlockItemHeader
-        makeUnder={currentSlide === "Resume" || pathURL[1] === "Resume"}
-        checkTab={pathURL[1]}
+        makeUnder={currentSlide === "Resume"}
+        checkTab={!isEmpty(pathURL) && pathURL[1]}
       >
         {topNavData.map((item, index) => (
           <>{renderTopNav(item, index)}</>
@@ -196,9 +200,9 @@ export const App = () => {
         />
       </div>
 
-      <div className="h-full w-full overflow-hidden relative aspect-video scale-custom md:scale-150 lg:scale-[1.2] z-20">
+      <div className="h-full w-full overflow-hidden relative scale-custom scale-[6] md:scale-[4] lg:scale-[1.8] xl:scale-[1.2] z-20 bg-slate-500">
         <ReactPlayer
-          className="object-cover absolute"
+          className="object-fill absolute top-0"
           url={`https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1239690/f032ec4916fad9f6f64ecb7a9f083e835f65e362.mp4`}
           width={"100%"}
           height={"100%"}
