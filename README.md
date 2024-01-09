@@ -3,7 +3,7 @@
 ## ❓ Overview
 This is my simple portfolio website. It's a basic summary of my journey to becoming a web developer.
 ## Preview - [Live Site](https://holimm.github.io/MyPortfolio/)
-![portfolio](https://github.com/holimm/MyPortfolio/assets/95845053/6058f591-8aac-4dc4-ab0d-27d3cbf11449)
+![portfolio](https://github.com/holimm/MyPortfolio/assets/95845053/7013317b-f7db-4797-b910-1c074fe19c2d)
 
 ## 🔑 Features
 <li>Dark mode</li>
