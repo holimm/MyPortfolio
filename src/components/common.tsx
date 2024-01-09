@@ -258,7 +258,7 @@ export const SkillList = ({ skillData }: { skillData: any[] }) => {
             className="dark:bg-[#0c0a09] bg-white"
             cover={
               <div className="dark:bg-neutral-900 bg-slate-100 p-4">
-                <Image src={item.logoSrc}></Image>
+                <Image src={item.logoSrc} preview={false}></Image>
               </div>
             }
           >
