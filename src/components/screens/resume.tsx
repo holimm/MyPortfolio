@@ -3,11 +3,14 @@ import { motion } from "framer-motion";
 import MyCV from "../../assets/resume/CV.png";
 import MyCV_EN from "../../assets/resume/CV_EN.png";
 import { BlockItemHeader, BlockItemResume, PageLayout } from "../common";
-import { Button, Flex, Image } from "antd";
+import { Flex, Image } from "antd";
 import { useLocalization } from "../../hooks/useLocalization";
 import { TopNavData } from "../../variables/const";
 import { useOutletContext } from "react-router-dom";
 import { TopNavDataType } from "../../variables/type";
+import { FilePdfOutlined } from "@ant-design/icons";
+import MyCV_PDF from "../../assets/resume/CV_PDF.pdf";
+import MyCV_EN_PDF from "../../assets/resume/CV_EN_PDF.pdf";
 
 export const ResumeScreen = () => {
   const { language } = useLocalization();
@@ -17,6 +20,11 @@ export const ResumeScreen = () => {
   const resume = useMemo(() => {
     if (language === "vi") return MyCV;
     if (language === "en") return MyCV_EN;
+  }, [language]);
+
+  const resumePDF = useMemo(() => {
+    if (language === "vi") return MyCV_PDF;
+    if (language === "en") return MyCV_EN_PDF;
   }, [language]);
 
   const renderTopNav = (item: TopNavDataType, index: number) => {
@@ -59,7 +67,26 @@ export const ResumeScreen = () => {
             ))}
           </BlockItemHeader>
           <BlockItemResume>
-            <Image className="h-full w-full max-h-[95vh]" src={resume} />
+            <Image
+              className="h-full w-full max-h-[95vh]"
+              onClick={() => {
+                console.log("Test");
+              }}
+              preview={false}
+              src={resume}
+            />
+            <div
+              className="h-full w-full flex justify-center items-center hover:bg-black/50 absolute top-0 transition-all group cursor-pointer"
+              onClick={() => {
+                window.open(resumePDF);
+              }}
+            >
+              <h1 className="h-fit w-fit group-hover:block hidden transition-all">
+                <FilePdfOutlined />
+                &nbsp;
+                <span>Click to open file</span>
+              </h1>
+            </div>
           </BlockItemResume>
         </Flex>
       </div>
