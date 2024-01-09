@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MyPortfolio/static/css/main.723ac7d0.css",
-    "main.js": "/MyPortfolio/static/js/main.0dc2f8db.js",
+    "main.css": "/MyPortfolio/static/css/main.6f5db6af.css",
+    "main.js": "/MyPortfolio/static/js/main.377175ff.js",
     "static/media/MyBlog.png": "/MyPortfolio/static/media/MyBlog.40a2571ff2dbc129dd10.png",
     "static/media/MySimpleRadio_2.png": "/MyPortfolio/static/media/MySimpleRadio_2.a0288facee45084ec07d.png",
     "static/media/ClothesEcommerce.png": "/MyPortfolio/static/media/ClothesEcommerce.957a262521c99d60e138.png",
@@ -12,13 +12,15 @@
     "static/media/ResumeGenerator.png": "/MyPortfolio/static/media/ResumeGenerator.67033129b2988970fb9b.png",
     "static/media/CV.png": "/MyPortfolio/static/media/CV.3d655d7b82cf93341ed7.png",
     "static/media/CV_EN.png": "/MyPortfolio/static/media/CV_EN.afabc5a08465027e8dda.png",
+    "static/media/CV_PDF.pdf": "/MyPortfolio/static/media/CV_PDF.7cb12590fc88ac2b7c79.pdf",
+    "static/media/CV_EN_PDF.pdf": "/MyPortfolio/static/media/CV_EN_PDF.b8999f0baf7e4b860307.pdf",
     "static/media/ResumeGenerator_2.png": "/MyPortfolio/static/media/ResumeGenerator_2.402b902fcab6200c8068.png",
     "index.html": "/MyPortfolio/index.html",
-    "main.723ac7d0.css.map": "/MyPortfolio/static/css/main.723ac7d0.css.map",
-    "main.0dc2f8db.js.map": "/MyPortfolio/static/js/main.0dc2f8db.js.map"
+    "main.6f5db6af.css.map": "/MyPortfolio/static/css/main.6f5db6af.css.map",
+    "main.377175ff.js.map": "/MyPortfolio/static/js/main.377175ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.723ac7d0.css",
-    "static/js/main.0dc2f8db.js"
+    "static/css/main.6f5db6af.css",
+    "static/js/main.377175ff.js"
   ]
 }
