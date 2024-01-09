@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 import MyCV from "../../assets/resume/CV.png";
 import MyCV_EN from "../../assets/resume/CV_EN.png";
 import { BlockItemHeader, BlockItemResume, PageLayout } from "../common";
@@ -20,21 +21,21 @@ export const ResumeScreen = () => {
 
   const renderTopNav = (item: TopNavDataType, index: number) => {
     return (
-      <Button
-        className={`font-montserrat text-black dark:text-white `}
-        type="text"
+      <motion.h1
+        className={`h-fit w-full font-montserrat text-center text-black dark:text-white cursor-pointer`}
         onClick={() => handleChangeTab(item.tab)}
-        block
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 1 }}
       >
         {item.label}
-      </Button>
+      </motion.h1>
     );
   };
 
   return (
     <PageLayout footer={false}>
-      <div className="h-fit w-[95%] lg:w-[72%] xl:w-[55%]">
-        <Flex className="h-screen w-full" justify="center" align="center">
+      <div className="h-fit w-[95%] lg:w-[72%] xl:w-[55%] mt-24 lg:mt-0">
+        <Flex className="h-screen w-full" justify="center" align="start">
           <div className="hidden lg:block">
             <div className={`h-fit w-fit flex justify-center items-center`}>
               <div

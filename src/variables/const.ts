@@ -75,13 +75,13 @@ export const skillData: SkillDataType[] = [
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
   },
   {
-    label: "Ant Design",
+    label: "Antd",
     type: "Front-end",
     logoSrc:
       "https://camo.githubusercontent.com/363242675617648bfbedd1610f89ac28df0f9e1bac8749d83109fafdf8524fff/68747470733a2f2f67772e616c697061796f626a656374732e636f6d2f7a6f732f726d73706f7274616c2f4b4470677667754d704766716148506a6963524b2e737667",
   },
   {
-    label: "Material UI",
+    label: "MUI",
     type: "Front-end",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",

@@ -1,5 +1,29 @@
 .bg-dotted {
-  background: hsla(209, 100%, 47%, 0.1);
-  background-image: radial-gradient(hsla(209, 100%, 47%, 1) 5%, transparent 0);
+  background: hsla(0, 0%, 42%, 0.1);
+  background-image: radial-gradient(rgb(134 25 143 / 1) 5%, transparent 0);
   background-size: 30px 30px;
+}
+
+.underline-animate {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+.underline-animate:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1.5px;
+  left: 50%;
+  position: absolute;
+  background: rgb(23 23 23 / 1);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.underline-animate:hover:after {
+  width: 100%;
+  left: 0;
 }

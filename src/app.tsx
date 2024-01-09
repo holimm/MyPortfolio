@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./css/scrollbar.css";
 import { Button, Dropdown, DropdownProps, MenuProps, Switch } from "antd";
 import { isEmpty } from "lodash";
+import { motion } from "framer-motion";
 import "./css/common.css";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
@@ -86,16 +87,16 @@ export const App = () => {
 
   const renderTopNav = (item: TopNavDataType, index: number) => {
     return (
-      <Button
-        className={`font-montserrat text-black dark:text-white ${
+      <motion.h1
+        className={`h-fit w-fit font-montserrat text-black dark:text-white ${
           item.tab === currentSlide && "!text-fuchsia-800"
-        }`}
-        type="text"
+        } cursor-pointer`}
         onClick={() => handleChangeTab(item.tab)}
-        block
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 1 }}
       >
         {item.label}
-      </Button>
+      </motion.h1>
     );
   };
   const handleOpenChange: DropdownProps["onOpenChange"] = (nextOpen, info) => {
@@ -115,7 +116,9 @@ export const App = () => {
         checkTab={!isEmpty(pathURL) && `${pathURL[1]}`}
       >
         {topNavData.map((item, index) => (
-          <>{renderTopNav(item, index)}</>
+          <div className="flex justify-center underline-animate">
+            {renderTopNav(item, index)}
+          </div>
         ))}
       </BlockItemHeader>
       <BlockItemMenu>

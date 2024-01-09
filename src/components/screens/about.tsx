@@ -64,25 +64,8 @@ export const AboutScreen = () => {
   return (
     <PageLayout>
       <div className="h-full w-[95%] lg:w-[72%] xl:w-[55%] mt-24 grid grid-cols-1 gap-y-5">
-        <Row className="h-[20em] lg:hidden block">
-          <Col
-            span={24}
-            xs={{ span: 24 }}
-            md={{ span: 11 }}
-            lg={{ span: 10 }}
-            className="h-full w-full"
-          >
-            <BlockItemImage avatar={AvatarHoLim} />
-          </Col>
-        </Row>
         <Row gutter={20}>
-          <Col
-            span={14}
-            xs={{ span: 24 }}
-            md={{ span: 13 }}
-            lg={{ span: 14 }}
-            className="h-full w-full"
-          >
+          <Col span={24} className="h-full w-full">
             <BlockItem>
               <Flex className="h-full w-full " justify="center" align="center">
                 <div className="h-fit w-full">
@@ -94,24 +77,14 @@ export const AboutScreen = () => {
                     <br />
                     {translate("About.Content_2")}
                   </CustomTypographyParagraph>
-                  <Row className="mt-3" gutter={14}>
+                  <Row className="mt-6" gutter={20}>
                     <AboutSocialMedia />
                   </Row>
                 </div>
               </Flex>
             </BlockItem>
           </Col>
-          <Col
-            span={10}
-            xs={{ span: 24 }}
-            md={{ span: 11 }}
-            lg={{ span: 10 }}
-            className="h-full w-full lg:block hidden"
-          >
-            <BlockItemImage avatar={AvatarHoLim} />
-          </Col>
         </Row>
-
         <Row gutter={20}>
           <Col span={24} className="h-full w-full">
             <BlockItem>

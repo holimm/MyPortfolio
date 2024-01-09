@@ -170,9 +170,9 @@ export const BlockItemHeader = ({
           className={`h-full w-fit bg-slate-100/50 dark:bg-neutral-800/50 rounded-full p-1`}
         >
           <div
-            className={`h-full w-fit mx-auto px-5 py-2 bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
+            className={`h-full w-fit mx-auto px-5 py-2 flex justify-center items-center bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
           >
-            <div className="grid grid-cols-4 gap-10">{children}</div>
+            <div className="grid grid-cols-4 gap-14 px-5">{children}</div>
           </div>
         </div>
       </div>
@@ -249,24 +249,29 @@ export const NormalTypography = ({
 
 export const SkillList = ({ skillData }: { skillData: any[] }) => {
   return (
-    <div className="h-fit max-h-[37em] overflow-y-auto w-full grid grid-cols-2 sm:grid-cols-4 xl:grid-cols-5 gap-5">
+    <div className="h-fit max-h-[37em] overflow-y-auto w-full grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 xl:grid-cols-7 gap-5">
       {!isEmpty(skillData) &&
         skillData.map((item: any) => (
           <Card
             type="inner"
             bordered={false}
-            className="dark:bg-[#0c0a09]"
+            className="dark:bg-[#0c0a09] bg-white"
             cover={
-              <div className="dark:bg-neutral-900">
+              <div className="dark:bg-neutral-900 bg-slate-100 p-4">
                 <Image src={item.logoSrc}></Image>
               </div>
             }
           >
-            <div className="h-full w-full">
-              <div className="text-lg text-black dark:text-white font-montserrat">
+            <Card.Meta
+              title={
+                <h1 className="text-black dark:text-white">{item.label}</h1>
+              }
+            />
+            {/* <div className="h-full w-full">
+              <div className="text-md text-black dark:text-white font-montserrat">
                 {item.label}
               </div>
-            </div>
+            </div> */}
           </Card>
         ))}
     </div>
