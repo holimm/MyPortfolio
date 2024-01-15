@@ -85,13 +85,6 @@ export const AboutScreen = () => {
                     <AboutSocialMedia />
                   </Row>
                 </div>
-                <Image
-                  className="rounded-full hidden lg:block aspect-square"
-                  width={"35%"}
-                  height={"35%"}
-                  src="https://camo.githubusercontent.com/8b4675727e803ade7d925fe9a5c05f06945013c8ef06a4b45800033815874215/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f79734f746e6c65347553624b2f67697068792e676966"
-                  preview={false}
-                />
               </Flex>
             </BlockItem>
           </Col>
