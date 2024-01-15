@@ -3,6 +3,7 @@ import "../../css/scrollbar.css";
 import {
   BlockItem,
   ContactSocialMedia,
+  GradientText,
   NormalTypography,
   PageLayout,
 } from "../common";
@@ -26,7 +27,9 @@ export const ContactScreen = () => {
                 <div className="h-[70vh] w-full flex justify-end items-end">
                   <div className="h-full w-full p-10 absolute top-0 left-0 z-20">
                     <NormalTypography extraClass="text-3xl font-bold">
-                      {translate("Contact.Contact")}
+                      <GradientText>
+                        {translate("Contact.Contact")}
+                      </GradientText>
                     </NormalTypography>
                     <NormalTypography extraClass="mt-3">
                       {translate("Contact.Description")}

@@ -4,6 +4,7 @@ import {
   BlockItem,
   CustomTypographyParagraph,
   CustomTypographyTitle,
+  GradientText,
   PageLayout,
 } from "../common";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
@@ -96,10 +97,12 @@ export const ProjectScreen = () => {
               <Flex className="h-full w-full " justify="center" align="center">
                 <div className="h-fit w-full">
                   <CustomTypographyTitle extraClass="text-center">
-                    {translate("Projects.IndustryExp")}
+                    <GradientText>
+                      {translate("Projects.IndustryExp")}
+                    </GradientText>
                   </CustomTypographyTitle>
                   <CustomTypographyParagraph extraClass="text-2xl text-center">
-                    <span className="!mt-4">
+                    <span className="!mt-4 font-bold">
                       {translate("Projects.Company_1")}
                     </span>
                     <br />

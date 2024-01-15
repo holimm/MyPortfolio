@@ -12,13 +12,15 @@ import {
 } from "./components/common.tsx";
 import ReactPlayer from "react-player";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { MdOutlineLightMode } from "react-icons/md";
+import { FaMoon } from "react-icons/fa";
 import { useLocalization } from "./hooks/useLocalization.tsx";
 import { TopNavData } from "./variables/const.ts";
 import { TopNavDataType } from "./variables/type.ts";
 
 export const App = () => {
   const pathURL = window.location.pathname.match(/\/MyPortfolio\/(.*)/);
-  const { changeLanguage } = useLocalization();
+  const { language, changeLanguage } = useLocalization();
   const [currentSlide, setCurrentSlide] = useState(
     !isEmpty(pathURL) && pathURL !== null ? `${pathURL[1]}` : "Home"
   );
@@ -88,8 +90,9 @@ export const App = () => {
   const renderTopNav = (item: TopNavDataType, index: number) => {
     return (
       <motion.h1
-        className={`h-fit w-fit font-montserrat text-black dark:text-white ${
-          item.tab === currentSlide && "!text-fuchsia-800"
+        className={`h-fit w-fit font-montserrat font-semibold text-black dark:text-white ${
+          item.tab === currentSlide &&
+          "!bg-gradient-to-r !from-purple-800 !to-fuchsia-800 !text-transparent !bg-clip-text"
         } cursor-pointer`}
         onClick={() => handleChangeTab(item.tab)}
         whileHover={{ scale: 1.05 }}
@@ -116,33 +119,71 @@ export const App = () => {
         checkTab={!isEmpty(pathURL) && `${pathURL[1]}`}
       >
         {topNavData.map((item, index) => (
-          <div className="flex justify-center underline-animate">
+          <div className="flex justify-center items-center underline-animate">
             {renderTopNav(item, index)}
           </div>
         ))}
-      </BlockItemHeader>
-      <BlockItemMenu>
-        <Dropdown
-          menu={{ items }}
-          onOpenChange={handleOpenChange}
-          open={openMenu}
-          placement="topLeft"
-        >
-          <span className="cursor-pointer" onClick={(e) => e.preventDefault()}>
-            <GiHamburgerMenu
-              className="fill-black dark:fill-white hover:scale-[1.2] transition-all"
-              size={20}
+        <div className="hidden lg:block">
+          <div className="flex justify-center items-center">
+            <Button
+              className="shadow"
+              icon={
+                darkMode ? (
+                  <FaMoon
+                    className="fill-black dark:fill-white mt-[0.2em]"
+                    size={"15px"}
+                  />
+                ) : (
+                  <MdOutlineLightMode
+                    className="fill-black dark:fill-white mt-[0.125em]"
+                    size={"18px"}
+                  />
+                )
+              }
+              onClick={() => handleDarkMode(!darkMode)}
             />
-          </span>
-        </Dropdown>
-      </BlockItemMenu>
+          </div>
+        </div>
+        <div className="hidden lg:block">
+          <div className="flex justify-center items-center">
+            <Button
+              className="shadow"
+              onClick={() => handleChangeLanguage(language === "en")}
+            >
+              <span className="uppercase text-black dark:text-white">
+                {language}
+              </span>
+            </Button>
+          </div>
+        </div>
+      </BlockItemHeader>
+      <div className="block lg:hidden">
+        <BlockItemMenu>
+          <Dropdown
+            menu={{ items }}
+            onOpenChange={handleOpenChange}
+            open={openMenu}
+            placement="topLeft"
+          >
+            <span
+              className="cursor-pointer"
+              onClick={(e) => e.preventDefault()}
+            >
+              <GiHamburgerMenu
+                className="fill-black dark:fill-white hover:scale-[1.2] transition-all"
+                size={20}
+              />
+            </span>
+          </Dropdown>
+        </BlockItemMenu>
+      </div>
       <div className="h-screen w-screen absolute top-0 z-30 bg-transparent dark:bg-black/50"></div>
       <div className="relative top-0 z-40">
         <ChangingScreenAnimation
           screenChanging={screenChanging}
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           zIndex="z-20"
           color="bg-[#2d054c]"
         />
@@ -150,7 +191,7 @@ export const App = () => {
           screenChanging={screenChanging}
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           zIndex="z-30"
           color="bg-[#1f0434]"
           onAnimationComplete={handleNavigate}
@@ -159,7 +200,7 @@ export const App = () => {
           screenChanging={screenOpenUp}
           initial={{ y: 0 }}
           animate={{ y: "100vh" }}
-          transition={{ duration: 0.9, ease: "easeInOut" }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           zIndex="z-20"
           color="bg-[#2d054c]"
           onAnimationComplete={() => {
@@ -170,7 +211,7 @@ export const App = () => {
           screenChanging={screenOpenUp}
           initial={{ y: 0 }}
           animate={{ y: "100vh" }}
-          transition={{ duration: 0.7, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           zIndex="z-30"
           color="bg-[#1f0434]"
         />

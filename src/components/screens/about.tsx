@@ -8,13 +8,12 @@ import {
   Space,
 } from "antd";
 import "../../css/scrollbar.css";
-import AvatarHoLim from "../../assets/img/avatar.jpg";
 import {
   AboutSocialMedia,
   BlockItem,
-  BlockItemImage,
   CustomTypographyParagraph,
   CustomTypographyTitle,
+  GradientText,
   PageLayout,
   SkillList,
 } from "../common";
@@ -28,14 +27,15 @@ import { useLocalization } from "../../hooks/useLocalization";
 import { toString } from "lodash";
 
 export const AboutScreen = () => {
-  const { translate } = useLocalization();
+  const { language, translate } = useLocalization();
+  console.log(language);
   const [githubCalendarDate, setGithubCalenderDate] = useState(
     new Date().getFullYear()
   );
   const renderSkillRow = (type: string) => {
     return (
       <div className="mt-8">
-        <CustomTypographyParagraph>
+        <CustomTypographyParagraph extraClass="text-xl">
           <b>{translate(`About.Skills.${type}`)}</b>
         </CustomTypographyParagraph>
         <SkillList skillData={skillData.filter((item) => item.type === type)} />
@@ -67,11 +67,15 @@ export const AboutScreen = () => {
         <Row gutter={20}>
           <Col span={24} className="h-full w-full">
             <BlockItem>
-              <Flex className="h-full w-full " justify="center" align="center">
+              <CustomTypographyTitle>
+                <GradientText>{translate("About.About")}</GradientText>
+              </CustomTypographyTitle>
+              <Flex
+                className="h-full w-full gap-5"
+                justify="center"
+                align="start"
+              >
                 <div className="h-fit w-full">
-                  <CustomTypographyTitle>
-                    {translate("About.About")}
-                  </CustomTypographyTitle>
                   <CustomTypographyParagraph>
                     {translate("About.Content_1")} <br />
                     <br />
@@ -81,6 +85,13 @@ export const AboutScreen = () => {
                     <AboutSocialMedia />
                   </Row>
                 </div>
+                <Image
+                  className="rounded-full hidden lg:block aspect-square"
+                  width={"35%"}
+                  height={"35%"}
+                  src="https://camo.githubusercontent.com/8b4675727e803ade7d925fe9a5c05f06945013c8ef06a4b45800033815874215/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f79734f746e6c65347553624b2f67697068792e676966"
+                  preview={false}
+                />
               </Flex>
             </BlockItem>
           </Col>
@@ -91,7 +102,13 @@ export const AboutScreen = () => {
               <Flex className="h-full w-full " justify="center" align="center">
                 <div className="h-fit w-full">
                   <CustomTypographyTitle>
-                    {translate("About.Skills")}
+                    <GradientText currentCheck={"vi"}>
+                      {translate("About.Skills_1")}
+                    </GradientText>
+                    &nbsp;
+                    <GradientText currentCheck={"en"}>
+                      {translate("About.Skills_2")}
+                    </GradientText>
                   </CustomTypographyTitle>
                   {renderSkillRow("Front-end")}
                   {renderSkillRow("Back-end")}
@@ -106,7 +123,7 @@ export const AboutScreen = () => {
           <Col span={24} className="h-full w-full">
             <BlockItem>
               <CustomTypographyTitle>
-                {translate("About.Certificates")}
+                <GradientText>{translate("About.Certificates")}</GradientText>
               </CustomTypographyTitle>
               <Row gutter={20}>
                 {renderCertificate(React_Basic_Certificate)}
@@ -120,7 +137,9 @@ export const AboutScreen = () => {
               <div className="h-full w-full flex justify-center items-center">
                 <div className="h-fit w-full">
                   <CustomTypographyTitle extraClass="text-center">
-                    {translate("About.Github.Contributions")}
+                    <GradientText>
+                      {translate("About.Github.Contributions")}
+                    </GradientText>
                   </CustomTypographyTitle>
 
                   <div className="w-fit max-w-full mx-auto mt-12 text-black dark:text-white ">

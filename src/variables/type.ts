@@ -7,6 +7,7 @@ export interface TabColorScreenType {
 export interface SkillDataType {
   label: string;
   type: string;
+  link: string;
   logoSrc: string;
 }
 export interface ScreenChangingAnimationType {

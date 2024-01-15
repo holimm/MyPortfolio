@@ -1,4 +1,4 @@
-import { Button, Card, Col, Image, Row, Typography } from "antd";
+import { Button, Col, Image, Row, Tooltip, Typography } from "antd";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 import { ScreenStyle } from "../variables/const";
@@ -7,39 +7,66 @@ import { isEmpty } from "lodash";
 import {
   DataSocialContactType,
   ScreenChangingAnimationType,
+  SkillDataType,
 } from "../variables/type";
 import { FaFacebook, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
+import { useLocalization } from "../hooks/useLocalization";
 
 const dataSocialContact: DataSocialContactType[] = [
   {
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/nguyen-lim-thai-ho/",
-    icon: <FaLinkedin size={40} className="fill-black dark:fill-white" />,
+    icon: (
+      <FaLinkedin
+        size={40}
+        className="fill-black dark:fill-white transition-all duration-[400]"
+      />
+    ),
     label: "Thái Hồ Nguyễn Lim",
   },
   {
     name: "Facebook",
     url: "https://www.facebook.com/tea.limho/",
-    icon: <FaFacebook size={40} className="fill-black dark:fill-white" />,
+    icon: (
+      <FaFacebook
+        size={40}
+        className="fill-black dark:fill-white transition-all duration-[200]"
+      />
+    ),
     label: "Hồ Lim  (임태호)",
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com/millohh_/",
-    icon: <FaInstagram size={40} className="fill-black dark:fill-white" />,
+    icon: (
+      <FaInstagram
+        size={40}
+        className="fill-black dark:fill-white transition-all duration-[200]"
+      />
+    ),
     label: "millohh_",
   },
   {
     name: "Github",
     url: "https://github.com/holimm",
-    icon: <FaGithub size={40} className="fill-black dark:fill-white" />,
+    icon: (
+      <FaGithub
+        size={40}
+        className="fill-black dark:fill-white transition-all duration-[200]"
+      />
+    ),
     label: "holimm",
   },
   {
     name: "Mail",
     url: "mailto:kahn12345678@gmail.com",
-    icon: <IoIosMail size={40} className="fill-black dark:fill-white" />,
+    icon: (
+      <IoIosMail
+        size={40}
+        className="fill-black dark:fill-white transition-all duration-[200]"
+      />
+    ),
     label: "kahn12345678@gmail.com",
   },
 ];
@@ -172,7 +199,7 @@ export const BlockItemHeader = ({
           <div
             className={`h-full w-fit mx-auto px-5 py-2 flex justify-center items-center bg-white/90 dark:bg-neutral-900/90 rounded-full shadow-md`}
           >
-            <div className="grid grid-cols-4 gap-14 px-5">{children}</div>
+            <div className="flex px-5 gap-10">{children}</div>
           </div>
         </div>
       </div>
@@ -249,30 +276,32 @@ export const NormalTypography = ({
 
 export const SkillList = ({ skillData }: { skillData: any[] }) => {
   return (
-    <div className="h-fit max-h-[37em] overflow-y-auto w-full grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 xl:grid-cols-7 gap-5">
+    <div className="h-fit max-h-[37em] py-2 overflow-y-auto w-full grid grid-cols-6 sm:grid-cols-8 md:grid-cols-9 xl:grid-cols-10 gap-5">
       {!isEmpty(skillData) &&
-        skillData.map((item: any) => (
-          <Card
-            type="inner"
-            bordered={false}
-            className="dark:bg-[#0c0a09] bg-white"
-            cover={
-              <div className="dark:bg-neutral-900 bg-slate-100 p-4">
-                <Image src={item.logoSrc} preview={false}></Image>
+        skillData.map((item: SkillDataType) => (
+          <a href={item.link} target="_blank" rel="noreferrer">
+            <Tooltip title={`${item.label}`}>
+              <div className="h-fit w-fit bg-gradient-to-tl from-slate-200 to-white dark:from-neutral-800 dark:to-neutral-700 p-2 rounded-lg shadow-md hover:cursor-pointer hover:scale-105 transition-all">
+                <Image src={item.logoSrc} preview={false} />
               </div>
-            }
-          >
-            <Card.Meta
-              title={
-                <h1 className="text-black dark:text-white">{item.label}</h1>
-              }
-            />
-            {/* <div className="h-full w-full">
-              <div className="text-md text-black dark:text-white font-montserrat">
-                {item.label}
-              </div>
-            </div> */}
-          </Card>
+            </Tooltip>
+          </a>
+          // <Card
+          //   type="inner"
+          //   bordered={false}
+          //   className="dark:bg-[#0c0a09] bg-white"
+          //   cover={
+          //     <div className="dark:bg-neutral-900 bg-slate-100 p-4">
+          //       <Image src={item.logoSrc} preview={false}></Image>
+          //     </div>
+          //   }
+          // >
+          //   <Card.Meta
+          //     title={
+          //       <h1 className="text-black dark:text-white">{item.label}</h1>
+          //     }
+          //   />
+          // </Card>
         ))}
     </div>
   );
@@ -386,5 +415,28 @@ export const ChangingScreenAnimation = ({
         </>
       )}
     </>
+  );
+};
+
+export const GradientText = ({
+  children,
+  currentCheck,
+}: {
+  children: ReactNode;
+  currentCheck?: string;
+}) => {
+  const { language } = useLocalization();
+  return (
+    <span
+      className={`${
+        language === currentCheck &&
+        "bg-gradient-to-l from-purple-700 to-fuchsia-600 text-transparent bg-clip-text"
+      } ${
+        isEmpty(currentCheck) &&
+        "bg-gradient-to-l from-purple-700 to-fuchsia-600 text-transparent bg-clip-text"
+      }`}
+    >
+      {children}
+    </span>
   );
 };

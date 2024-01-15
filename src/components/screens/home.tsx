@@ -1,10 +1,7 @@
-import { Button, Col, Flex, Image, Row } from "antd";
+import { Button, Col, Flex, Row } from "antd";
 import "../../css/scrollbar.css";
-import Lottie from "lottie-react";
-import purpleBot from "../../assets/json/purple-bot.json";
 import {
   BlockItem,
-  BlockItemImage,
   CustomTypographyParagraph,
   CustomTypographyTitle,
   PageLayout,
@@ -67,10 +64,10 @@ export const HomeScreen = () => {
                       vertical
                     >
                       <div className="h-fit w-full">
-                        <CustomTypographyTitle
-                          extraClass={`!text-5xl w-fit !text-fuchsia-800`}
-                        >
-                          {translate("Home.Greeting")},
+                        <CustomTypographyTitle extraClass={`!text-5xl w-fit`}>
+                          <span className="bg-gradient-to-r from-purple-700 to-fuchsia-700 text-transparent bg-clip-text">
+                            {translate("Home.Greeting")},
+                          </span>
                           <CustomTypographyTitle extraClass="!text-4xl mt-2 font-extralight text-black dark:text-white">
                             {translate("Home.Greeting.Welcome")}
                           </CustomTypographyTitle>

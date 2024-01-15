@@ -12,7 +12,8 @@ export const VI_Vietnam = {
     "Chào mừng, mình là Nguyễn Lim Thái Hồ, một front-end developer đam mê việc tạo ra những trang web tuyệt vời. mình yêu thích biến các thiết kế thành các trải nghiệm thú vị và hoạt động tốt nhất cho người dùng",
   "About.Content_2":
     "Mình chú ý đến chi tiết và thích cải thiện hiệu suất của trang web. Ngoài lập trình, mình luôn cập nhật xu hướng web mới nhất thông qua việc học online. Mong muốn những thách thức và cơ hội mới để phát triển!",
-  "About.Skills": "Kỹ Năng Của Tôi",
+  "About.Skills_1": "Kỹ Năng",
+  "About.Skills_2": "Của Tôi",
   "About.Skills.Front-end": "Front-end",
   "About.Skills.Back-end": "Back-end",
   "About.Skills.Database": "Cơ Sở Dữ Liệu",

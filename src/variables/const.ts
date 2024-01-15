@@ -41,103 +41,119 @@ export const skillData: SkillDataType[] = [
   {
     label: "React.js",
     type: "Front-end",
+    link: "https://react.dev/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   },
   {
     label: "Next.js",
     type: "Front-end",
+    link: "https://nextjs.org/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
   },
   {
     label: "Typescript",
     type: "Tools",
+    link: "https://www.typescriptlang.org/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
   },
   {
     label: "Redux",
     type: "Tools",
+    link: "https://redux.js.org/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
   },
   {
     label: "TailwindCSS",
     type: "Front-end",
+    link: "https://tailwindcss.com/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
   },
   {
     label: "Bootstrap",
     type: "Front-end",
+    link: "https://getbootstrap.com/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
   },
   {
-    label: "Antd",
+    label: "Ant Design",
     type: "Front-end",
+    link: "https://ant.design/",
     logoSrc:
-      "https://camo.githubusercontent.com/363242675617648bfbedd1610f89ac28df0f9e1bac8749d83109fafdf8524fff/68747470733a2f2f67772e616c697061796f626a656374732e636f6d2f7a6f732f726d73706f7274616c2f4b4470677667754d704766716148506a6963524b2e737667",
+      "https://static-00.iconduck.com/assets.00/ant-design-icon-512x512-xbdsnx83.png",
   },
   {
-    label: "MUI",
+    label: "Material UI",
     type: "Front-end",
+    link: "https://mui.com/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
   },
   {
     label: "HTML5",
     type: "Front-end",
+    link: "",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
   },
   {
     label: "CSS3",
     type: "Front-end",
+    link: "",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
   },
   {
     label: "Javascript",
     type: "Front-end",
+    link: "",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
     label: "Javascript",
     type: "Back-end",
+    link: "",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
   },
   {
     label: "Node.js",
     type: "Back-end",
+    link: "https://nodejs.org/en",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
   },
   {
     label: "PHP",
     type: "Back-end",
+    link: "https://www.php.net/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   },
   {
     label: "Laravel",
     type: "Back-end",
+    link: "https://laravel.com/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
   },
-
   {
     label: "MySQL",
     type: "Database",
+    link: "https://www.mysql.com/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
   },
   {
     label: "MongoDB",
     type: "Database",
+    link: "https://www.mongodb.com/",
     logoSrc:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   },
