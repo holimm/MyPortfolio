@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MyPortfolio/static/css/main.52a5dc41.css",
-    "main.js": "/MyPortfolio/static/js/main.65d17f36.js",
+    "main.js": "/MyPortfolio/static/js/main.e115a2ff.js",
     "static/media/MyBlog.png": "/MyPortfolio/static/media/MyBlog.40a2571ff2dbc129dd10.png",
     "static/media/MySimpleRadio_2.png": "/MyPortfolio/static/media/MySimpleRadio_2.a0288facee45084ec07d.png",
     "static/media/ClothesEcommerce.png": "/MyPortfolio/static/media/ClothesEcommerce.957a262521c99d60e138.png",
@@ -9,18 +9,42 @@
     "static/media/React_Basic_Certificate.png": "/MyPortfolio/static/media/React_Basic_Certificate.dd3fe9cdc0cfb79cda75.png",
     "static/media/MySimpleRadio.png": "/MyPortfolio/static/media/MySimpleRadio.c1af70156e798df3394d.png",
     "static/media/MineInUs.png": "/MyPortfolio/static/media/MineInUs.edce69e04fdd5ac64371.png",
+    "static/media/MillierStore_1.png": "/MyPortfolio/static/media/MillierStore_1.85cc6e0b527566eb6a34.png",
     "static/media/ResumeGenerator.png": "/MyPortfolio/static/media/ResumeGenerator.67033129b2988970fb9b.png",
+    "static/media/MillierStore_2.png": "/MyPortfolio/static/media/MillierStore_2.abdce52a70e917e173b3.png",
     "static/media/CV.png": "/MyPortfolio/static/media/CV.3d655d7b82cf93341ed7.png",
     "static/media/CV_EN.png": "/MyPortfolio/static/media/CV_EN.afabc5a08465027e8dda.png",
+    "static/media/MillierStore_3.png": "/MyPortfolio/static/media/MillierStore_3.f20a0bdc215cdd629451.png",
+    "static/media/MillierStore_4.png": "/MyPortfolio/static/media/MillierStore_4.6f5ddd1b169df8676e37.png",
     "static/media/CV_PDF.pdf": "/MyPortfolio/static/media/CV_PDF.7cb12590fc88ac2b7c79.pdf",
     "static/media/CV_EN_PDF.pdf": "/MyPortfolio/static/media/CV_EN_PDF.b8999f0baf7e4b860307.pdf",
+    "static/media/MillierStoreBE_1.png": "/MyPortfolio/static/media/MillierStoreBE_1.42f8c1cd70f167ecdf20.png",
     "static/media/ResumeGenerator_2.png": "/MyPortfolio/static/media/ResumeGenerator_2.402b902fcab6200c8068.png",
+    "static/media/MillierStore_7.png": "/MyPortfolio/static/media/MillierStore_7.1a486ec784ab71222084.png",
+    "static/media/MillierStore_5.png": "/MyPortfolio/static/media/MillierStore_5.6abd1d83b5365381da61.png",
+    "static/media/AntDesignIcon.png": "/MyPortfolio/static/media/AntDesignIcon.12d7b2101ea745217ca1.png",
+    "static/media/MillierStore_6.png": "/MyPortfolio/static/media/MillierStore_6.10d7f47e9186c3155577.png",
+    "static/media/MongoDBIcon.svg": "/MyPortfolio/static/media/MongoDBIcon.6835c61a518a732eb8318d43dfe8f700.svg",
+    "static/media/PHPIcon.svg": "/MyPortfolio/static/media/PHPIcon.bf6243b5212d81aaf1245fc2826551fd.svg",
+    "static/media/MySQLIcon.svg": "/MyPortfolio/static/media/MySQLIcon.60ec33723e9b175cb9581651f672b3fe.svg",
+    "static/media/ReactIcon.svg": "/MyPortfolio/static/media/ReactIcon.4e0c97009b885bfa75c5412262a46f5f.svg",
+    "static/media/LaravelIcon.svg": "/MyPortfolio/static/media/LaravelIcon.97997b4ecb7fb0b888d54f6d1b048ed6.svg",
+    "static/media/BootstrapIcon.svg": "/MyPortfolio/static/media/BootstrapIcon.1f1d6bd3811dece9cf8ed729700cf21e.svg",
+    "static/media/NodeJSIcon.svg": "/MyPortfolio/static/media/NodeJSIcon.3eb147b0e1b7a5455b9bf254bc5884af.svg",
+    "static/media/ReduxIcon.svg": "/MyPortfolio/static/media/ReduxIcon.2fa08b46b0c0e7372c20acbe86b2e39e.svg",
+    "static/media/JavascriptIcon.svg": "/MyPortfolio/static/media/JavascriptIcon.4c1b5332c1b1057928f6f06cf972c91c.svg",
+    "static/media/TypescriptIcon.svg": "/MyPortfolio/static/media/TypescriptIcon.8d9549db1a0f5d73a35aa5dab48a09f9.svg",
     "index.html": "/MyPortfolio/index.html",
+    "static/media/CSS3Icon.svg": "/MyPortfolio/static/media/CSS3Icon.39769a8bd378bf410d6b381a8d88fa35.svg",
+    "static/media/NextJSIcon.svg": "/MyPortfolio/static/media/NextJSIcon.2eee3ad3059ff52c5e34c5249e2da540.svg",
+    "static/media/TailwindIcon.svg": "/MyPortfolio/static/media/TailwindIcon.8b3f5baf8ad130d320c59560114d0684.svg",
+    "static/media/HTML5Icon.svg": "/MyPortfolio/static/media/HTML5Icon.8664168d5bc90b1a24396f85aadbf623.svg",
+    "static/media/MaterialUIIcon.svg": "/MyPortfolio/static/media/MaterialUIIcon.87264df237ee700ba78bb58ff701a6d3.svg",
     "main.52a5dc41.css.map": "/MyPortfolio/static/css/main.52a5dc41.css.map",
-    "main.65d17f36.js.map": "/MyPortfolio/static/js/main.65d17f36.js.map"
+    "main.e115a2ff.js.map": "/MyPortfolio/static/js/main.e115a2ff.js.map"
   },
   "entrypoints": [
     "static/css/main.52a5dc41.css",
-    "static/js/main.65d17f36.js"
+    "static/js/main.e115a2ff.js"
   ]
 }
