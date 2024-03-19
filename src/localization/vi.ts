@@ -33,6 +33,11 @@ export const VI_Vietnam = {
   "Projects.Company_1.Content.4":
     "Nghiên cứu và phát triển một UIPath unattended bot để tự động hóa quá trình nhận email đến hoặc trả lời email, sau đó xử lý và gửi lại cho phía back-end để tạo nút yêu cầu mới hoặc bình luận trên một nút yêu cầu đã tồn tại.",
   "Projects.Personal": "Dự Án Cá Nhân",
+  "Projects.MillierStore": "Millier Store 🏬",
+  "Projects.MillierStore.Content":
+    "Millier Store là một trang web thương mại điện tử bán điện thoại di động, laptop và phụ kiện. Lấy cảm hứng từ trang web chính thức của Apple, tôi nhằm tạo ra một thiết kế linh hoạt và thân thiện với người dùng.",
+  "Projects.MillierStoreBE": "Millier Store BE 🌐",
+  "Projects.MillierStoreBE.Content": `Millier Store BE là phần sau cho Millier Store. Hiện đang lưu trữ trên Vietnix sử dụng gói "Hosting Cheap 2" và MongoDB để lưu trữ dữ liệu.`,
   "Projects.MySimpleRadio": "My Simple Radio 🎶",
   "Projects.MySimpleRadio.Content": `MySimpleRadio là một trình phát nhạc đơn giản truyền từ Youtube. Cho dù bạn đang học, chơi game, hay chỉ đơn giản là thư giãn. MySimpleRadio sẽ mang đến trải nghiệm tốt nhất và đảm bảo bạn có thể tập trung vào công việc của mình.`,
   "Projects.ResumeGenerator": "Resume Generator 📰",

@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { IconType } from "react-icons";
 
 export interface TabColorScreenType {
@@ -8,7 +9,7 @@ export interface SkillDataType {
   label: string;
   type: string;
   link: string;
-  logoSrc: string;
+  logoSrc: ReactNode;
 }
 export interface ScreenChangingAnimationType {
   screenChanging: boolean;

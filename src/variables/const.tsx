@@ -1,5 +1,23 @@
 import { useLocalization } from "../hooks/useLocalization";
 import { SkillDataType } from "./type";
+import ReactIcon from "../assets/img/icons/ReactIcon.svg";
+import NextJSIcon from "../assets/img/icons/NextJSIcon.svg";
+import TypescriptIcon from "../assets/img/icons/TypescriptIcon.svg";
+import ReduxIcon from "../assets/img/icons/ReduxIcon.svg";
+import TailwindIcon from "../assets/img/icons/TailwindIcon.svg";
+import BootstrapIcon from "../assets/img/icons/BootstrapIcon.svg";
+import AntDesignIcon from "../assets/img/icons/AntDesignIcon.png";
+import MaterialUIIcon from "../assets/img/icons/MaterialUIIcon.svg";
+import HTML5Icon from "../assets/img/icons/HTML5Icon.svg";
+import CSS3Icon from "../assets/img/icons/CSS3Icon.svg";
+import JavascriptIcon from "../assets/img/icons/JavascriptIcon.svg";
+import NodeJSIcon from "../assets/img/icons/NodeJSIcon.svg";
+import PHPIcon from "../assets/img/icons/PHPIcon.svg";
+import LaravelIcon from "../assets/img/icons/LaravelIcon.svg";
+import MySQLIcon from "../assets/img/icons/MySQLIcon.svg";
+import MongoDBIcon from "../assets/img/icons/MongoDBIcon.svg";
+
+import { Image } from "antd";
 
 export const ScreenStyle = "h-full w-full";
 
@@ -42,119 +60,102 @@ export const skillData: SkillDataType[] = [
     label: "React.js",
     type: "Front-end",
     link: "https://react.dev/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    logoSrc: <Image src={ReactIcon} preview={false} />,
   },
   {
     label: "Next.js",
     type: "Front-end",
     link: "https://nextjs.org/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    logoSrc: <Image src={NextJSIcon} preview={false} />,
   },
   {
     label: "Typescript",
     type: "Tools",
     link: "https://www.typescriptlang.org/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    logoSrc: <Image src={TypescriptIcon} preview={false} />,
   },
   {
     label: "Redux",
     type: "Tools",
     link: "https://redux.js.org/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+    logoSrc: <Image src={ReduxIcon} preview={false} />,
   },
   {
     label: "TailwindCSS",
     type: "Front-end",
     link: "https://tailwindcss.com/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    logoSrc: <Image src={TailwindIcon} preview={false} />,
   },
   {
     label: "Bootstrap",
     type: "Front-end",
     link: "https://getbootstrap.com/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    logoSrc: <Image src={BootstrapIcon} preview={false} />,
   },
   {
     label: "Ant Design",
     type: "Front-end",
     link: "https://ant.design/",
-    logoSrc:
-      "https://static-00.iconduck.com/assets.00/ant-design-icon-512x512-xbdsnx83.png",
+    logoSrc: <Image src={AntDesignIcon} preview={false} />,
   },
   {
     label: "Material UI",
     type: "Front-end",
     link: "https://mui.com/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+    logoSrc: <Image src={MaterialUIIcon} preview={false} />,
   },
   {
     label: "HTML5",
     type: "Front-end",
     link: "",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    logoSrc: <Image src={HTML5Icon} preview={false} />,
   },
   {
     label: "CSS3",
     type: "Front-end",
     link: "",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    logoSrc: <Image src={CSS3Icon} preview={false} />,
   },
   {
     label: "Javascript",
     type: "Front-end",
     link: "",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    logoSrc: <Image src={JavascriptIcon} preview={false} />,
   },
   {
     label: "Javascript",
     type: "Back-end",
     link: "",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    logoSrc: <Image src={JavascriptIcon} preview={false} />,
   },
   {
     label: "Node.js",
     type: "Back-end",
     link: "https://nodejs.org/en",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    logoSrc: <Image src={NodeJSIcon} preview={false} />,
   },
   {
     label: "PHP",
     type: "Back-end",
     link: "https://www.php.net/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+    logoSrc: <Image src={PHPIcon} preview={false} />,
   },
   {
     label: "Laravel",
     type: "Back-end",
     link: "https://laravel.com/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg",
+    logoSrc: <Image src={LaravelIcon} preview={false} />,
   },
   {
     label: "MySQL",
     type: "Database",
     link: "https://www.mysql.com/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    logoSrc: <Image src={MySQLIcon} preview={false} />,
   },
   {
     label: "MongoDB",
     type: "Database",
     link: "https://www.mongodb.com/",
-    logoSrc:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    logoSrc: <Image src={MongoDBIcon} preview={false} />,
   },
 ];

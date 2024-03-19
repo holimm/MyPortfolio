@@ -8,6 +8,14 @@ import {
   PageLayout,
 } from "../common";
 import { RiArrowRightDoubleLine } from "react-icons/ri";
+import MillierStore_1 from "../../assets/img/projects/MillierStore/MillierStore_1.png";
+import MillierStore_2 from "../../assets/img/projects/MillierStore/MillierStore_2.png";
+import MillierStore_3 from "../../assets/img/projects/MillierStore/MillierStore_3.png";
+import MillierStore_4 from "../../assets/img/projects/MillierStore/MillierStore_4.png";
+import MillierStore_5 from "../../assets/img/projects/MillierStore/MillierStore_5.png";
+import MillierStore_6 from "../../assets/img/projects/MillierStore/MillierStore_6.png";
+import MillierStore_7 from "../../assets/img/projects/MillierStore/MillierStore_7.png";
+import MillierStoreBE_1 from "../../assets/img/projects/MillierStoreBE/MillierStoreBE_1.png";
 import MySimpleRadio from "../../assets/img/projects/MySimpleRadio/MySimpleRadio.png";
 import MySimpleRadio_2 from "../../assets/img/projects/MySimpleRadio/MySimpleRadio_2.png";
 import MineInUs from "../../assets/img/projects/MineInUs/MineInUs.png";
@@ -148,6 +156,28 @@ export const ProjectScreen = () => {
                     {translate("Projects.Personal")}
                   </CustomTypographyTitle>
                   <div className="h-fit w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {renderPersonalProjects(
+                      [
+                        MillierStore_1,
+                        MillierStore_2,
+                        MillierStore_3,
+                        MillierStore_4,
+                        MillierStore_5,
+                        MillierStore_6,
+                        MillierStore_7,
+                      ],
+                      "https://github.com/holimm/millierstore",
+                      "https://millierstore.vercel.app/",
+                      translate("Projects.MillierStore"),
+                      translate("Projects.MillierStore.Content")
+                    )}
+                    {renderPersonalProjects(
+                      [MillierStoreBE_1],
+                      "https://github.com/holimm/MillierBE",
+                      "",
+                      translate("Projects.MillierStoreBE"),
+                      translate("Projects.MillierStoreBE.Content")
+                    )}
                     {renderPersonalProjects(
                       [MySimpleRadio, MySimpleRadio_2],
                       "https://github.com/holimm/MySimpleRadio",

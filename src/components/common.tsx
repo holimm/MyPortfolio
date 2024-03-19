@@ -282,7 +282,8 @@ export const SkillList = ({ skillData }: { skillData: any[] }) => {
           <a href={item.link} target="_blank" rel="noreferrer">
             <Tooltip title={`${item.label}`}>
               <div className="h-fit w-fit bg-gradient-to-tl from-slate-200 to-white dark:from-neutral-800 dark:to-neutral-700 p-2 rounded-lg shadow-md hover:cursor-pointer hover:scale-105 transition-all">
-                <Image src={item.logoSrc} preview={false} />
+                {/* <Image src={item.logoSrc} preview={false} /> */}
+                {item.logoSrc}
               </div>
             </Tooltip>
           </a>

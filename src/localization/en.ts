@@ -31,6 +31,11 @@ export const EN_English = {
   "Projects.Company_1.Content.4":
     "Researched and developed a UIPath unattended bot to automate the process of getting incoming emails or email replies, then processing them and sending them back to the back-end to create a request node or comment on an existing request node.",
   "Projects.Personal": "Personal Projects",
+  "Projects.MillierStore": "Millier Store 🏬",
+  "Projects.MillierStore.Content":
+    "Millier Store is an e-commerce website that sells mobile phones, laptops, and accessories. With inspiration from the official Apple website, I aimed to create a responsive and user-friendly design.",
+  "Projects.MillierStoreBE": "Millier Store BE 🌐",
+  "Projects.MillierStoreBE.Content": `Millier Store BE is a back-end for Millier Store. Currently hosting on Vietnix using the "Hosting Cheap 2" pack and MongoDB for data storage.`,
   "Projects.MySimpleRadio": "My Simple Radio 🎶",
   "Projects.MySimpleRadio.Content": `MySimpleRadio is a simple music player that streams from Youtube. Whether you are studying, playing games, or just relaxing. MySimpleRadio will deliver the best experience and make sure that you can focus on whatever you are doing.`,
   "Projects.ResumeGenerator": "Resume Generator 📰",

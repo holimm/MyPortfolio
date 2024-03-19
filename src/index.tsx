@@ -3,7 +3,7 @@ import "./css/scrollbar.css";
 import { App } from "./app.tsx";
 import "./css/input.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { urlHost } from "./variables/const.ts";
+import { urlHost } from "./variables/const.tsx";
 import { HomeScreen } from "./components/screens/home.tsx";
 import { AboutScreen } from "./components/screens/about.tsx";
 import { ProjectScreen } from "./components/screens/projects.tsx";

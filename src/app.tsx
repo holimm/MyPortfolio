@@ -15,7 +15,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutlineLightMode } from "react-icons/md";
 import { FaMoon } from "react-icons/fa";
 import { useLocalization } from "./hooks/useLocalization.tsx";
-import { TopNavData } from "./variables/const.ts";
+import { TopNavData } from "./variables/const.tsx";
 import { TopNavDataType } from "./variables/type.ts";
 
 export const App = () => {
