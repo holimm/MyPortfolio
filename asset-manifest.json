@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MyPortfolio/static/css/main.52a5dc41.css",
-    "main.js": "/MyPortfolio/static/js/main.e115a2ff.js",
+    "main.js": "/MyPortfolio/static/js/main.c4225d93.js",
     "static/media/MyBlog.png": "/MyPortfolio/static/media/MyBlog.40a2571ff2dbc129dd10.png",
     "static/media/MySimpleRadio_2.png": "/MyPortfolio/static/media/MySimpleRadio_2.a0288facee45084ec07d.png",
     "static/media/ClothesEcommerce.png": "/MyPortfolio/static/media/ClothesEcommerce.957a262521c99d60e138.png",
@@ -12,13 +12,13 @@
     "static/media/MillierStore_1.png": "/MyPortfolio/static/media/MillierStore_1.85cc6e0b527566eb6a34.png",
     "static/media/ResumeGenerator.png": "/MyPortfolio/static/media/ResumeGenerator.67033129b2988970fb9b.png",
     "static/media/MillierStore_2.png": "/MyPortfolio/static/media/MillierStore_2.abdce52a70e917e173b3.png",
-    "static/media/CV.png": "/MyPortfolio/static/media/CV.3d655d7b82cf93341ed7.png",
-    "static/media/CV_EN.png": "/MyPortfolio/static/media/CV_EN.afabc5a08465027e8dda.png",
+    "static/media/CV.png": "/MyPortfolio/static/media/CV.2d15ca8361e289fd8a73.png",
+    "static/media/CV_EN.png": "/MyPortfolio/static/media/CV_EN.87520c19be2b371c3fd5.png",
     "static/media/MillierStore_3.png": "/MyPortfolio/static/media/MillierStore_3.f20a0bdc215cdd629451.png",
     "static/media/MillierStore_4.png": "/MyPortfolio/static/media/MillierStore_4.6f5ddd1b169df8676e37.png",
-    "static/media/CV_PDF.pdf": "/MyPortfolio/static/media/CV_PDF.7cb12590fc88ac2b7c79.pdf",
-    "static/media/CV_EN_PDF.pdf": "/MyPortfolio/static/media/CV_EN_PDF.b8999f0baf7e4b860307.pdf",
+    "static/media/CV_PDF.pdf": "/MyPortfolio/static/media/CV_PDF.1c1c9d09c45e8ddf2de2.pdf",
     "static/media/MillierStoreBE_1.png": "/MyPortfolio/static/media/MillierStoreBE_1.42f8c1cd70f167ecdf20.png",
+    "static/media/CV_EN_PDF.pdf": "/MyPortfolio/static/media/CV_EN_PDF.5ce713bdee9af33500d1.pdf",
     "static/media/ResumeGenerator_2.png": "/MyPortfolio/static/media/ResumeGenerator_2.402b902fcab6200c8068.png",
     "static/media/MillierStore_7.png": "/MyPortfolio/static/media/MillierStore_7.1a486ec784ab71222084.png",
     "static/media/MillierStore_5.png": "/MyPortfolio/static/media/MillierStore_5.6abd1d83b5365381da61.png",
@@ -41,10 +41,10 @@
     "static/media/HTML5Icon.svg": "/MyPortfolio/static/media/HTML5Icon.8664168d5bc90b1a24396f85aadbf623.svg",
     "static/media/MaterialUIIcon.svg": "/MyPortfolio/static/media/MaterialUIIcon.87264df237ee700ba78bb58ff701a6d3.svg",
     "main.52a5dc41.css.map": "/MyPortfolio/static/css/main.52a5dc41.css.map",
-    "main.e115a2ff.js.map": "/MyPortfolio/static/js/main.e115a2ff.js.map"
+    "main.c4225d93.js.map": "/MyPortfolio/static/js/main.c4225d93.js.map"
   },
   "entrypoints": [
     "static/css/main.52a5dc41.css",
-    "static/js/main.e115a2ff.js"
+    "static/js/main.c4225d93.js"
   ]
 }
